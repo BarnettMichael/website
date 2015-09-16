@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey(User)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
@@ -17,8 +19,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
-class Person(models.Model):
+class User(models.Model):
     """
     Class to model each user
     Each user has:
@@ -29,11 +30,16 @@ class Person(models.Model):
 
     method to make a guess
     """
+    user = models.OneToOneField(User)
+
     name = models.CharField(max_length=200)
     points = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
         return self.name
+
+
+
 
 class Team(models.Model):
     name = models.CharField(max_length=200, null=True, unique=True)
@@ -62,15 +68,13 @@ class Match(models.Model):
 
 class Guess(models.Model):
     """
-    Model for each persons guesses
+    Model for each Users guesses
     """
-    #def __init__(self, match):
-    #    self.match = match
 
     match = models.ForeignKey(Match, null=True)
-    user = models.ForeignKey(Person)  #takes a person many to one
-    score_chosen = models.PositiveSmallIntegerField()
-    team_chosen = models.ForeignKey(Team, null=True)
+    user = models.ForeignKey(User)  #takes a User many to one
+    points_difference = models.PositiveSmallIntegerField()
+    winning_team = models.ForeignKey(Team, null=True)
 
     def __str__(self):
         return str(self.user) + ": " + str(self.match)

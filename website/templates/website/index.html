@@ -2,19 +2,14 @@
 {% load l10n %}
 {% load tz %}
 
-{% block head_title %}Rugby World Cup Score Predictor {% endblock %}
+{% block head_title %}Home Page {% endblock %}
 
 {% block content %}
     <div class="jumbotron">
       <div class="container">
-        <h1>Rugby World Cup Score Predictor</h1>
-        <p>This is the homepage for the rwc guessing game. Check out the current standings</br>
-            Make your own predictions etc.
-        </p>
-          <p>
-              <a class="btn btn-default" href="rwc/guesses" role="button">Go To Guesses Page &raquo;</a>
-          </p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+        <h1>Homepage</h1>
+        <p>Under Construction</p>
+        <p><a class="btn btn-primary btn-lg" href="rwc" role="button">Rugby World Cup Site &raquo;</a></p>
       </div>
     </div>
 
@@ -22,20 +17,9 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-            <h3>
-            <br id="matchlist">
-                {% for match in matches %}
-                    {{ match }} : {{match.time}} </br>
-                {% endfor %}
-            </h3>
-        </div>
-        <div class="col-md-4">
           <h2 id="local-date">{{today}}</h2>
-          <p>Login</p>
-            <form method="POST" class="authform">
-                {{ authform }}
-            </form>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>This is the time using your local information</p>
+          <p><a class="btn btn-default" href="" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2 id="non-local-date">{{today|unlocalize}}</h2>
