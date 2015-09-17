@@ -1,15 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
-from .models import Team, Match, Guess
+from .models import User, Team, Match, Guess
 from .forms import GuessForm
 # Create your views here.
 
 def rwc_home(request):
 
-    matches = Match.objects.all().order_by('time')
-    return render(request, 'rwc/rwc_home.html', {'matches': matches}
+    users = User.objects.all()
+    print users
+    upcoming_matches = Match.objects.all().order_by('time')
+    return render(request, 'rwc/rwc_home.html', {'upcoming_matches': upcoming_matches,
+                                                 'users': users,
+                                                 }
                   )
 
 
@@ -19,23 +23,29 @@ def rwc_guesses(request):
     user=request.user
 
     teams = Team.objects.all()
-    matches = Match.objects.all()
-    guesses = Guess.objects.all()
+    matches = Match.objects.all().order_by('time')
+    guesses = Guess.objects.filter(user=user.user)
 
 
     if request.method == "POST":
-        form = GuessForm(request.POST)
+
+        match = request.POST['match']
+
+        guess = Guess.objects.filter(user=user.user).filter(match=match)[0]
+        form = GuessForm(request.POST, match=match, instance=guess)
+
         if form.is_valid():
             guess = form.save(commit=False)
-            guess.user = request.user._wrapped.user
-            #guess.match = request.POST['match']
+            guess.user = request.user.user
             guess.save()
 
-    else:
-        form = GuessForm()
+    forms = []
+    for guess in guesses:
+        form = GuessForm(instance=guess, match=guess.match)
+        forms.append(form)
 
     return render(request, 'rwc/rwc_guesses.html', {'user': user,
-                                                    'form': form,
+                                                    'forms': forms,
                                                     'matches': matches,
                                                     'guesses': guesses,
                                                     'teams': teams,

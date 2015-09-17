@@ -24,38 +24,21 @@
         <div class="col-md-4">
             <h3>
             <br id="matchlist">
-                {% for match in matches %}
+                {% for match in upcoming_matches %}
                     {{ match }} : {{match.time}} </br>
                 {% endfor %}
             </h3>
         </div>
-        <div class="col-md-4">
-          <h2 id="local-date">{{today}}</h2>
-          <p>Login</p>
-            <form method="POST" class="authform">
-                {{ authform }}
-            </form>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2 id="non-local-date">{{today|unlocalize}}</h2>
-          <p>This is the default time format</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Time Zones</h2>
-          <p> London: <span id="time-tz">{{now|time:"H:i"}}</span></p>
-          <p> UTC: <span id="time-utc">{{now|utc|time:"H:i"}}</span></p>
-          <p> New York: <span id="time-ny">
-                    {{now|timezone:"America/New_York"|time:"H:i"}}</span></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
+      <div class=table>
+            <tr>
+                <td>Name</td><td>Points</td>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td><td>{{ user.points }}</td>
+            </tr>
+            {% endfor %}
+      </div>
     </div>
 {% endblock %}

@@ -21,21 +21,16 @@
         <div class="col-md-4">
             <h3>
             <br id="Matchlist">
-                {% for match in matches %}
-                <form method="post" class="guess-form"> {% csrf_token%}
-                    {{ match }}
-                    {{ form.as_p }}
+                {% for form in forms %}
+                <form method="post" class="guess-form"> {% csrf_token %}
+                    {{ form.match }}
+                    {{ form.winning_team }}
+                    {{ form.points_difference }}
                     <button type="submit" class="save btn btn-default">Save</button>
                 </form>
                 </br>
                 {% endfor %}
             </h3>
-        </div>
-        <div class="col-md-4">
-          <h3>{% for guess in guesses %}
-              {{ guess }}
-          {% endfor %}
-          </h3>
         </div>
 
       </div>
