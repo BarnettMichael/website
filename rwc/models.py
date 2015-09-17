@@ -69,7 +69,7 @@ class Guess(models.Model):
     """
 
     match = models.ForeignKey(Match)
-    user = models.ForeignKey(User)  #takes a User many to one
+    user = models.ForeignKey(User)
     points_difference = models.PositiveSmallIntegerField(blank=True, null=True)
     winning_team = models.ForeignKey(Team, blank=True, null=True)
 

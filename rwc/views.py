@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth import authenticate, login
+import datetime
+
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from .models import User, Team, Match, Guess
@@ -10,7 +11,7 @@ def rwc_home(request):
 
     users = User.objects.all()
     print users
-    upcoming_matches = Match.objects.all().order_by('time')
+    upcoming_matches = Match.objects.all().order_by('time').exclude(time__lt=datetime.datetime.now())
     return render(request, 'rwc/rwc_home.html', {'upcoming_matches': upcoming_matches,
                                                  'users': users,
                                                  }
@@ -22,10 +23,10 @@ def rwc_guesses(request):
 
     user=request.user
 
-    teams = Team.objects.all()
-    matches = Match.objects.all().order_by('time')
-    guesses = Guess.objects.filter(user=user.user)
+    cut_off_time = datetime.datetime.now() - datetime.timedelta(minutes=5)
 
+    matches = Match.objects.all().order_by('time')
+    guesses = Guess.objects.filter(user=user.user).exclude(match__time__lt=cut_off_time)
 
     if request.method == "POST":
 
@@ -36,11 +37,12 @@ def rwc_guesses(request):
 
         if form.is_valid():
             guess = form.save(commit=False)
-            guess.user = request.user.user
+            guess.user = user.user
             guess.save()
 
     forms = []
     for guess in guesses:
+
         form = GuessForm(instance=guess, match=guess.match)
         forms.append(form)
 
@@ -48,6 +50,5 @@ def rwc_guesses(request):
                                                     'forms': forms,
                                                     'matches': matches,
                                                     'guesses': guesses,
-                                                    'teams': teams,
                                                     }
                     )
