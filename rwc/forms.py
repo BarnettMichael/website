@@ -13,4 +13,4 @@ class GuessForm(forms.ModelForm):
 
     class Meta:
         model = Guess
-        fields = ('match', 'winning_team', 'points_difference',)
+        fields = ('match', 'winning_team', 'score_difference',)

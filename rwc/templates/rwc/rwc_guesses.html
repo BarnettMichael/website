@@ -8,8 +8,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Rugby World Cup Score Predictor</h1>
-        <p>This is the homepage for the rwc guessing game. Check out the current standings</br>
-            Make your own predictions etc.
+        <p>This is where you make your guesses, you currently have to click save for every match</br>
+            I think, not sure. If you want to choose a draw just set the points difference to 0,</br>
+            and pick either team.
         </p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
@@ -19,13 +20,19 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
+            <h2><p><u>Match</u>
+                   <u>Team Chosen</u>
+                   <u>Score Difference</u>
+               </p>
+            </h2>
             <h3>
             <br id="Matchlist">
                 {% for form in forms %}
                 <form method="post" class="guess-form"> {% csrf_token %}
                     {{ form.match }}
+                    {{ form.match.time }}
                     {{ form.winning_team }}
-                    {{ form.points_difference }}
+                    {{ form.score_difference }}
                     <button type="submit" class="save btn btn-default">Save</button>
                 </form>
                 </br>

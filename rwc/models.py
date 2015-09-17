@@ -57,7 +57,7 @@ class Match(models.Model):
     home_team = models.ForeignKey(Team, null=True, related_name='home_team')
     away_team = models.ForeignKey(Team, null=True, related_name='away_team')
     winning_team = models.ForeignKey(Team, blank=True, null=True)
-    points_difference = models.PositiveSmallIntegerField(blank=True, null=True)
+    score_difference = models.PositiveSmallIntegerField(blank=True, null=True)
 
     def __str__(self):
         return str(self.home_team) + " vs " + str(self.away_team)
@@ -70,7 +70,7 @@ class Guess(models.Model):
 
     match = models.ForeignKey(Match)
     user = models.ForeignKey(User)
-    points_difference = models.PositiveSmallIntegerField(blank=True, null=True)
+    score_difference = models.PositiveSmallIntegerField(blank=True, null=True)
     winning_team = models.ForeignKey(Team, blank=True, null=True)
 
     def __str__(self):

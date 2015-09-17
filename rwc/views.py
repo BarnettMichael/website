@@ -9,7 +9,7 @@ from .forms import GuessForm
 
 def rwc_home(request):
 
-    users = User.objects.all()
+    users = User.objects.all().order_by('points').reverse()
     print users
     upcoming_matches = Match.objects.all().order_by('time').exclude(time__lt=datetime.datetime.now())
     return render(request, 'rwc/rwc_home.html', {'upcoming_matches': upcoming_matches,
@@ -25,8 +25,10 @@ def rwc_guesses(request):
 
     cut_off_time = datetime.datetime.now() - datetime.timedelta(minutes=5)
 
+    print cut_off_time
+
     matches = Match.objects.all().order_by('time')
-    guesses = Guess.objects.filter(user=user.user).exclude(match__time__lt=cut_off_time)
+    guesses = Guess.objects.filter(user=user.user).exclude(match__time__lt=datetime.datetime.now())
 
     if request.method == "POST":
 
@@ -45,7 +47,7 @@ def rwc_guesses(request):
 
         form = GuessForm(instance=guess, match=guess.match)
         forms.append(form)
-
+    print forms
     return render(request, 'rwc/rwc_guesses.html', {'user': user,
                                                     'forms': forms,
                                                     'matches': matches,

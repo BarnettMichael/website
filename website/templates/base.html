@@ -34,6 +34,7 @@
                 {% else %}
                     {{ user.username }}
                 {% endif %}
+                <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
             </p>
         </span>>
         {% endblock %}
