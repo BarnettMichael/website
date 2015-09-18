@@ -36,19 +36,16 @@ def rwc_guesses(request):
     matches = Match.objects.all().order_by('time')
     guesses = Guess.objects.filter(user=user.user)\
                     .exclude(match__time__lt=datetime.datetime.now())\
-                    .exclude(match__time__gt=(datetime.datetime.now() + datetime.timedelta(days=4)))\
-                    .reverse()
-
-    print guesses
+                    .exclude(match__time__gt=(datetime.datetime.now() + datetime.timedelta(days=4)))
 
     if request.method == "POST":
 
-        match = request.POST['match']
-
+        match = Match.objects.get(pk=(request.POST['match']))
         guess = Guess.objects.filter(user=user.user).filter(match=match)[0]
         form = GuessForm(request.POST, match=match, instance=guess)
 
         if form.is_valid():
+
             guess = form.save(commit=False)
             guess.user = user.user
             guess.save()
