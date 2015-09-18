@@ -12,7 +12,7 @@
             Make your own predictions etc.
         </p>
           <p>
-              <a class="btn btn-default" href="rwc/guesses" role="button">Go To Guesses Page &raquo;</a>
+              <a class="btn btn-default" href="{% url 'rwc_guesses' %}" role="button">Go To Guesses Page &raquo;</a>
           </p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
@@ -24,8 +24,9 @@
         <div class="col-md-4">
             <h3>
             <br id="matchlist">
-                {% for match in upcoming_matches %}
-                    {{ match }} : {{match.time}} </br>
+                <u>Matches Today</u>
+                {% for match in matches_today %}
+                    {{ match }} : {{ match.time }} </br>
                 {% endfor %}
             </h3>
         </div>
@@ -40,5 +41,17 @@
             </tr>
             {% endfor %}
       </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h4>
+                    <u>Matches Tomorrow</u>
+                    {% for match in matches_tomorrow %}
+                        {{ match }} : {{ match.time }}</br>
+                    {% endfor %}
+                </h4>
+            </div>
+
+        </div>
     </div>
 {% endblock %}

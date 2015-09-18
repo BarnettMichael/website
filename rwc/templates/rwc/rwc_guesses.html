@@ -2,22 +2,21 @@
 {% load l10n %}
 {% load tz %}
 
-{% block head_title %}Rugby World Cup Score Predictor {% endblock %}
+{% block head_title %} {{ user.user.name }} Guesses {% endblock %}
 
 {% block content %}
     <div class="jumbotron">
       <div class="container">
         <h1>Rugby World Cup Score Predictor</h1>
         <p>This is where you make your guesses, you currently have to click save for every match</br>
-            I think, not sure. If you want to choose a draw just set the points difference to 0,</br>
-            and pick either team.
+            I think, not sure.</br>
+            If you want to choose a draw just set the points difference to 0, and pick either team.
         </p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
             <h2><p><u>Match</u>
@@ -30,7 +29,7 @@
                 {% for form in forms %}
                 <form method="post" class="guess-form"> {% csrf_token %}
                     {{ form.match }}
-                    {{ form.match.time }}
+                    {{ form.time }}
                     {{ form.winning_team }}
                     {{ form.score_difference }}
                     <button type="submit" class="save btn btn-default">Save</button>
@@ -45,7 +44,7 @@
 
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p></p>
       </footer>
     </div>
 {% endblock %}

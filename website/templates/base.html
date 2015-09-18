@@ -31,10 +31,12 @@
                 Logged in:
                 {% if user.username == "" %}
                     none
+                    <a class="btn btn-default" href="{% url 'login' %}" role="button">Login</a>
                 {% else %}
                     {{ user.username }}
+                    <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
                 {% endif %}
-                <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
+
             </p>
         </span>>
         {% endblock %}

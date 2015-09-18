@@ -1,16 +1,19 @@
-from django import forms
+from django.forms import Select, ModelForm
 
-from .models import Guess, Match
+from .models import Guess
 
-class GuessForm(forms.ModelForm):
+class GuessForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
 
         self.match = kwargs.pop('match')
+        self.time = self.match.time
         super(GuessForm, self).__init__(*args, **kwargs)
-
-        #Guess.objects.filter(user=self.user).filter(match=self.match)
+        self.fields['winning_team'].widget.choices = [(self.match.home_team, self.match.home_team.name),
+                                                      (self.match.away_team, self.match.away_team.name),
+                                                     ]
 
     class Meta:
         model = Guess
-        fields = ('match', 'winning_team', 'score_difference',)
+        fields = ('winning_team', 'score_difference',)
+        widgets = {'winning_team': Select()}
