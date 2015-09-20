@@ -14,51 +14,49 @@
           <p>
               <a class="btn btn-default" href="{% url 'rwc_guesses' %}" role="button">Go To Guesses Page &raquo;</a>
           </p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-            <h3>
-            <br id="matchlist">
-                <u>Matches Today</u>
-                {% for match in matches_today %}
-                    {{ match }} : {{ match.time }} </br>
-                {% endfor %}
-            </h3>
-        </div>
-      </div>
-      <div class=table>
-          <table>
-              <thead>
-                    <tr>
-                        <th colspan="2">Current Standings</th>
-                    </tr>
-              </thead>
-              <tbody>
-              {% for user in users %}
-                    <tr>
-                        <td>{{ user.name }}</td><td>{{ user.points }}</td>
-                    </tr>
-              {% endfor %}
-              </tbody>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Current Standings</th>
+                </tr>
+                <tr>
+                    <th>Name</th><th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td><td>{{ user.points }}</td>
+                </tr>
+            {% endfor %}
+             </tbody>
+        </table>
+        </br>
+        <a href="{% url 'rwc_results' %}">Results</a>
+        <h3>
+        <u>Matches Today</u></br>
+        {% for match in matches_today %}
+            {{ match }} : {{ match.time }} </br>
+        {% endfor %}
+        </h3>
 
-          </table>
-      </div>
+        <h4>
+        <u>Matches Tomorrow</u></br>
+        {% for match in matches_tomorrow %}
+            {{ match }} : {{ match.time }} </br>
+        {% endfor %}
+        </h4>
 
-        <div class="row">
-            <div class="col-md-4">
-                <h4>
-                    <u>Matches Tomorrow</u>
-                    {% for match in matches_tomorrow %}
-                        {{ match }} : {{ match.time }}</br>
-                    {% endfor %}
-                </h4>
-            </div>
-
-        </div>
+        <h4>Next to work on</h4>
+        <ul>
+            <li>Improve look</li>
+            <li>Ability to edit guesses for all future matches not just next 7 days</li>
+            <li>fix login/out pages.</li>
+            <li>add points scored per game to results tables</li>
+        </ul>
     </div>
 {% endblock %}

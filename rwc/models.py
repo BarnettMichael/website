@@ -70,7 +70,7 @@ class Guess(models.Model):
 
     match = models.ForeignKey(Match)
     user = models.ForeignKey(User)
-    score_difference = models.PositiveSmallIntegerField(blank=True, null=True)
+    score_difference = models.PositiveSmallIntegerField(blank=True, null=True, default=0)
     winning_team = models.ForeignKey(Team, blank=True, null=True)
 
     def __str__(self):

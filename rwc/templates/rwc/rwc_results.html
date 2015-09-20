@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load l10n %}
+{% load tz %}
+
+{% block head_title %}Rugby World Cup Results{% endblock %}
+
+{% block content %}
+    {% for match in matches %}
+    <div class="matchguess">
+    <h3><u>{{ match }}</u></h3>
+    {{ match.time }}
+
+    <h4>Winner: {{match.winning_team }} </br>
+        By: {{match.score_difference }}
+    </h4>
+    <table class="guesstable">
+        <thead>
+            <tr><th colspan="3">Guesses</th></tr>
+            <tr>
+                <th>User</th>
+                <th>Guess</th>
+                <th>By</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guess in guesses %}
+            {% if guess.match == match %}
+                <tr>
+                    <td> {{ guess.user }}</td>
+                    <td> {{ guess.winning_team }}</td>
+                    <td> {{ guess.score_difference }}</td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

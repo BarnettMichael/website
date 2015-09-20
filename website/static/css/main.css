@@ -55,35 +55,36 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+    background-color: #c6e2ff;
+}
 
 .jumbotron h1 {
     color: rgba(200, 200, 115, 1);
     }
 
-.navbar {
-    background-color: blue;
-    color: orange;
+/*.navbar {
+    background-color: #85ADAD;
+    color: #E65C00;
     text-align: right;
 }
 
 .navbar a {
-    color: orange;
+    color: #E65C00;
 }
-
+*/
 td.leftpanel, td.rightpanel {
-    width:5em;
+    width:15em;
     height:540px;
-    background-color:orange;
 }
 
-td.rightpanel {
-    width: 10em;
-    align: right;
+div.matchguess {
+    border: 2px solid black;
 }
 
-
-
-
+.guesstable, .guesstable th, .guesstable td {
+    border: 0.5px solid gray
+}
 
 
 

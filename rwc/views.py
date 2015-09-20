@@ -11,14 +11,16 @@ from .forms import GuessForm
 def rwc_home(request):
 
     users = User.objects.all().order_by('points').reverse()
-    upcoming_matches = Match.objects.all().order_by('time').exclude(time__lt=datetime.datetime.now())
+    upcoming_matches = Match.objects.all().exclude(time__lt=datetime.datetime.now()).order_by('time')
     matches_today = Match.objects.filter(time__year=datetime.datetime.today().year)\
                                  .filter(time__month=datetime.datetime.today().month)\
-                                 .filter(time__day=datetime.datetime.today().day)
+                                 .filter(time__day=datetime.datetime.today().day)\
+                                 .order_by('time')
 
     matches_tomorrow = Match.objects.filter(time__year=datetime.datetime.today().year)\
                                     .filter(time__month=datetime.datetime.today().month)\
-                                    .filter(time__day=(datetime.datetime.today().day + 1))
+                                    .filter(time__day=(datetime.datetime.today().day + 1))\
+                                    .order_by('time')
 
     return render(request, 'rwc/rwc_home.html', {'upcoming_matches': upcoming_matches,
                                                  'matches_today': matches_today,
@@ -36,7 +38,7 @@ def rwc_guesses(request):
     matches = Match.objects.all().order_by('time')
     guesses = Guess.objects.filter(user=user.user)\
                     .exclude(match__time__lt=datetime.datetime.now())\
-                    .exclude(match__time__gt=(datetime.datetime.now() + datetime.timedelta(days=4)))
+                    .exclude(match__time__gt=(datetime.datetime.now() + datetime.timedelta(days=7)))
 
     if request.method == "POST":
 
@@ -61,3 +63,13 @@ def rwc_guesses(request):
                                                     'guesses': guesses,
                                                     }
                     )
+
+def rwc_results(request):
+
+    matches = Match.objects.filter(time__lt=datetime.datetime.now()).order_by('time')
+    guesses = Guess.objects.filter(match__time__lt=datetime.datetime.now()).order_by('user')
+
+    return render(request, 'rwc/rwc_results.html', {'matches': matches,
+                                                    'guesses': guesses
+                                                    }
+                  )
