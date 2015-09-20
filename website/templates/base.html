@@ -12,8 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
 
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
 
@@ -26,9 +26,8 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         {% block navbar %}
-        <span>
-            <p>
-                Logged in:
+        <div class="navbar">
+            Logged in:
                 {% if user.username == "" %}
                     none
                     <a class="btn btn-default" href="{% url 'login' %}" role="button">Login</a>
@@ -36,12 +35,19 @@
                     {{ user.username }}
                     <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
                 {% endif %}
-
-            </p>
-        </span>>
+        </div>
         {% endblock %}
+        <div class="table">
+            <table>
+                <tr>
+        <td class="leftpanel"></td>
 
-        {% block content %}{% endblock %}
+        <td class="content" align="top"> {% block content %}{% endblock %} </td>
+
+        <td class="rightpanel"></td>
+                </tr>
+            </table>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

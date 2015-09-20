@@ -32,14 +32,21 @@
         </div>
       </div>
       <div class=table>
-            <tr>
-                <td>Name</td><td>Points</td>
-            </tr>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.name }}</td><td>{{ user.points }}</td>
-            </tr>
-            {% endfor %}
+          <table>
+              <thead>
+                    <tr>
+                        <th colspan="2">Current Standings</th>
+                    </tr>
+              </thead>
+              <tbody>
+              {% for user in users %}
+                    <tr>
+                        <td>{{ user.name }}</td><td>{{ user.points }}</td>
+                    </tr>
+              {% endfor %}
+              </tbody>
+
+          </table>
       </div>
 
         <div class="row">

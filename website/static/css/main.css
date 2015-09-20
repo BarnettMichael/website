@@ -60,11 +60,26 @@ textarea {
     color: rgba(200, 200, 115, 1);
     }
 
+.navbar {
+    background-color: blue;
+    color: orange;
+    text-align: right;
+}
 
+.navbar a {
+    color: orange;
+}
 
+td.leftpanel, td.rightpanel {
+    width:5em;
+    height:540px;
+    background-color:orange;
+}
 
-
-
+td.rightpanel {
+    width: 10em;
+    align: right;
+}
 
 
 
