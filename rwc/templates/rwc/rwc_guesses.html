@@ -4,22 +4,22 @@
 
 {% block head_title %} {{ user.user.name }} Guesses {% endblock %}
 
+{% block navbar_title %} Rugby World Cup Score Predictor {% endblock %}
+
 {% block content %}
     <div class="jumbotron">
       <div class="container">
-        <h1>Rugby World Cup Score Predictor</h1>
-        <p>This is where you make your guesses, you currently have to click save for every match</br>
-            I think, not sure.</br>
+      <p>This is where you make your guesses, you currently have to click save for every match</br>
+            One Weeks games displayed at a time.</br>
             If you want to choose a draw just set the points difference to 0, and pick either team.
-            Closest person to points difference gets a bonus point
-        </p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+            Closest person to actual points difference of those who pick the correct winning team gets a bonus point.
+      </p>
       </div>
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
             <table>
                 <thead>
                     <tr><th colspan="5"> Matches</th></tr>
@@ -46,32 +46,10 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <!--<h2><p><u>Match</u>
-                   <u>Team Chosen</u>
-                   <u>Score Difference</u>
-               </p>
-            </h2>
-            <h3>
-            <br id="Matchlist">
-                {% for form in forms %}
-                <form method="post" class="guess-form"> {% csrf_token %}
-                    {{ form.match }}
-                    {{ form.time }}
-                    {{ form.winning_team }}
-                    {{ form.score_difference }}
-                    <button type="submit" class="save btn btn-default">Save</button>
-                </form>
-                </br>
-                {% endfor %}
-            </h3> -->
+            </div>
         </div>
-
-      </div>
-
-
-
-      <footer>
-        <p></p>
-      </footer>
+    </div>
+    <div class="next_week_button">
+        <a href = "{% url 'rwc_guesses_more' pk=pk %}">Next Week Matches</a>
     </div>
 {% endblock %}

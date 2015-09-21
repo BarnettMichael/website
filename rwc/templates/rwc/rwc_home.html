@@ -3,16 +3,15 @@
 {% load tz %}
 
 {% block head_title %}Rugby World Cup Score Predictor {% endblock %}
-
+{% block navbar_title %}Rugby World Cup Score Predictor{% endblock %}
 {% block content %}
     <div class="jumbotron">
       <div class="container">
-        <h1>Rugby World Cup Score Predictor</h1>
         <p>This is the homepage for the rwc guessing game. Check out the current standings</br>
             Make your own predictions etc.
         </p>
           <p>
-              <a class="btn btn-default" href="{% url 'rwc_guesses' %}" role="button">Go To Guesses Page &raquo;</a>
+              <a class="rwc_link" href="{% url 'rwc_guesses' %}" role="button">Make/Edit your guesses</a>
           </p>
       </div>
     </div>
@@ -36,7 +35,7 @@
              </tbody>
         </table>
         </br>
-        <a href="{% url 'rwc_results' %}">Results</a>
+        <a class="rwc_link" href="{% url 'rwc_results' %}">Finished Match Results</a>
         <h3>
         <u>Matches Today</u></br>
         {% for match in matches_today %}
@@ -54,9 +53,8 @@
         <h4>Next to work on</h4>
         <ul>
             <li>Improve look</li>
-            <li>Ability to edit guesses for all future matches not just next 7 days</li>
-            <li>fix login/out pages.</li>
-            <li>add points scored per game to results tables</li>
+            <li>add points scored per game to results tables
+            <li>save all guesses with a single button</li>
         </ul>
     </div>
 {% endblock %}

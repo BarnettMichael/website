@@ -56,34 +56,111 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-    background-color: #c6e2ff;
+    background-color: #DFE2DB;
+    font-family: Lobster, Sans-Serif;
 }
 
-.jumbotron h1 {
-    color: rgba(200, 200, 115, 1);
+/* * {
+    border: 1px dashed green;
+} */
+
+.navbar, .leftpanel {
+    position: fixed;
+    background-color: #191919;
+    color: #DFE2DB;
+    text-align: center;
+}
+
+.navbar {
+    margin-top: -3%;
+    width: 100%;
+    z-index: 1;
+    height: 100px;
+}
+
+.navbar div {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: inline-block;
     }
 
-/*.navbar {
-    background-color: #85ADAD;
-    color: #E65C00;
-    text-align: right;
+.navbar .Title {
+    color: #FFF056;
+    position: relative;
+    float: left;
+    margin: 65px 0px 0px 45%;
+    padding: 0px 0px 0px 0px;
+    }
+
+.navbar .Login {
+    position: relative;
+    float: right;
+    padding: 0px 0px 0px 0px;
+    margin: 75px 15px 0px 0px;
 }
 
-.navbar a {
-    color: #E65C00;
+.navbar .Login span {
+    color: #FFF056;
 }
-*/
-td.leftpanel, td.rightpanel {
-    width:15em;
-    height:540px;
+
+.leftpanel {
+    padding: 50px 0px 0px 0px;
+    margin: 0px 0px 0px -3%;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    float: left;
 }
+
+.leftpanel a {
+    padding-left: 18%;
+}
+
+.leftpanel h4 {
+    padding-left: 18%;
+    }
+
+.leftpanel ul {
+    padding-left: 30%;
+    margin-top: -10%;
+
+}
+
+.leftpanel ul li {
+    padding-left: auto;
+
+}
+
+.leftpanel ul li a {
+    padding-left: 0px;
+}
+
+a:visited, a:link{
+    text-decoration: none;
+    color: #3F18B2;
+}
+
+a:hover {
+    text-decoration:none;
+    color: #8056FF;
+}
+
+.content {
+    padding-top: 10%;
+    padding-left: 25%;
+}
+
+.content a:link, .content a:visited {
+    color: #3F18B2;
+    }
+
+.content a:hover {
+    color: #8056FF;
+    }
 
 div.matchguess {
-    border: 2px solid black;
-}
-
-.guesstable, .guesstable th, .guesstable td {
-    border: 0.5px solid gray
+    border: 1px solid #191919;
+    text-align: center;
 }
 
 

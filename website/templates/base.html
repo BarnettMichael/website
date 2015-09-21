@@ -25,9 +25,13 @@
         <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% block navbar %}
         <div class="navbar">
+            <div class="Title">
+                {% block navbar_title %}{% endblock %}
+            </div>
+            <div class="Login">
             Logged in:
+                <span>
                 {% if user.username == "" %}
                     none
                     <a class="btn btn-default" href="{% url 'login' %}" role="button">Login</a>
@@ -35,19 +39,22 @@
                     {{ user.username }}
                     <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
                 {% endif %}
-        </div>
-        {% endblock %}
-        <div class="table">
-            <table>
-                <tr>
-        <td class="leftpanel"></td>
+                </span>
 
-        <td class="content" align="top"> {% block content %}{% endblock %} </td>
-
-        <td class="rightpanel"></td>
-                </tr>
-            </table>
+            </div>
         </div>
+        <div class="leftpanel">
+            <a href="{% url 'home' %}">Home</a></li>
+            <h4>Projects</h4>
+            <ul>
+                <li><a href="{% url 'rwc_home' %}">Rugby World Cup</a></li>
+                <li>Other</li>
+                <li>stuff</li>
+                <li>maybe</li>
+            </ul>
+        </div>
+
+        <div class="content"> {% block content %}{% endblock %} </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
