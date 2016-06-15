@@ -55,42 +55,165 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+    font-family: Sans-Serif;
+    }
+
+a:hover {
+    text-decoration: none;
+    }
+
+header {
+    margin-top: -3vh;
+    width: 100vw;
+    color: rgb(85,81,82);
+    height: 25vh;
+    background-position: center;
+    background-size: 102vw 68vw;
+    background-repeat: no-repeat;
+    }
+
 body {
-    background-color: #DFE2DB;
-    font-family: Lobster, Sans-Serif;
-}
-
-/* * {
-    border: 1px dashed green;
-} */
-
-.navbar, .leftpanel {
-    position: fixed;
-    background-color: #191919;
-    color: #DFE2DB;
-    text-align: center;
-}
+    color: rgb(46,38,51);
+    }
 
 .navbar {
-    margin-top: -3%;
-    width: 100%;
-    z-index: 1;
-    height: 100px;
+    position: fixed;/*position-left: -5vw;*/
+    background-color: rgba(85,81,82,0);
+    color: rgb(153,23,60);
+    font-weight:bold;
+    text-align: center;
+    margin-top: 0%;
+    width: 100vw;
+    height: 15vh;
+    z-index: 10;
+}
+
+.navbar.expanded {
+    position: fixed;
+    /*height: 115vh;*/
+    background-color: rgba(85,81,82,0.9);
+    color: rgb(255,255,255);
+    }
+
+.navbar:hover {
+    background-color: rgba(85,81,82,0.95);
+    }
+
+.navbar.expanded:hover {
+    background-color: rgba(85,81,82,0.95);
+    }
+
+.navbar .nav_menu_button {
+    margin-top: 18px;
+    margin-right: 18px;
+    display: inline;
+    float:right;
+    }
+
+.navbar .nav_menu_button.expanded {
+    display: none;
+    }
+
+.navbar .nav_options {
+    display: none;
+    }
+
+.navbar .nav_options.expanded {
+    text-transform: uppercase;
+    }
+
+.navbar .page_title {
+    margin-top: 6vh;
+    margin-bottom: 5.5vh;
+    font-size: 2em;
+    }
+
+.navbar .nav_option {
+    font-size: 1.5em;
+    padding-right: 10vw;
+    height: 2.5em;
+    width: 110vw;
+    }
+
+.navbar .nav_option:hover {
+    border-top: solid 1px rgb(46,38,51);
+    border-bottom: solid 1px rgb(46,38,51);
 }
 
 .navbar div {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    display: none;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
     display: inline-block;
+    position: relative;
+    font-weight: bold;
+    }
+
+.navbar div.expanded {
+    display: initial;
+    }
+
+.navbar a {
+
+}
+
+.navbar a:visited, .navbar a:link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar a.expanded:link, .navbar a.expanded:visited {
+    color: inherit;
     }
 
 .navbar .Title {
-    color: #FFF056;
     position: relative;
-    float: left;
-    margin: 65px 0px 0px 45%;
-    padding: 0px 0px 0px 0px;
+    margin-top: 5px;
+    display: initial;
     }
+
+.navbar .Title.expanded {
+    position: relative;
+    margin-top: 5px;
+    }
+
+.navbar .Cv_Button {
+    float: left;
+    margin-left: 3px;
+}
+
+.navbar .Cv_Button.expanded {
+}
+
+.navbar .Projects_Menu {
+    margin-top: 5px;
+}
+
+.navbar .Projects_List {
+    width: 200%;
+    margin-top:-1px;
+    padding-top:10px;
+    display:none;
+    position:absolute;
+    background-color: #3E7F7F;
+    z-index: -1;
+}
+
+.navbar .Project {
+    font-weight:bold;
+    width: 100%;
+}
+
+.navbar .Score_Predictor {
+    float: right;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.navbar .Spacer {
+    width: 20%;
+}
 
 .navbar .Login {
     position: relative;
@@ -103,59 +226,96 @@ body {
     color: #FFF056;
 }
 
-.leftpanel {
-    padding: 50px 0px 0px 0px;
-    margin: 0px 0px 0px -3%;
-    width: 200px;
-    height: 100%;
-    z-index: 2;
-    float: left;
-}
-
-.leftpanel a {
-    padding-left: 18%;
-}
-
-.leftpanel h4 {
-    padding-left: 18%;
-    }
-
-.leftpanel ul {
-    padding-left: 30%;
-    margin-top: -10%;
-
-}
-
-.leftpanel ul li {
-    padding-left: auto;
-
-}
-
-.leftpanel ul li a {
-    padding-left: 0px;
-}
-
-a:visited, a:link{
-    text-decoration: none;
-    color: #3F18B2;
-}
-
-a:hover {
-    text-decoration:none;
-    color: #8056FF;
-}
-
 .content {
-    padding-top: 10%;
-    padding-left: 25%;
-}
-
-.content a:link, .content a:visited {
-    color: #3F18B2;
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
     }
 
-.content a:hover {
-    color: #8056FF;
+.portfolio_section {
+    color: rgb(46,38,51);
+    /*padding: 1vh 10vw;*/
+    /*width: 100vw;*/
+    font-size: 1.3em;
+    }
+
+.portfolio_section--title {
+    text-align: center;
+    border: 5px rgb(46,38,51) solid;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(153,23,60);
+    }
+
+.portfolio_section--highlightbg {
+    background-color: rgb(239,255,205);
+    }
+
+#pluralsight_link {
+    text-align: center;
+    }
+
+.portfolio_project {
+    display: inline-block;
+    width: 360px;
+    height: 360px;
+    background-color: rgb(46,38,51);
+    margin: 0px auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    }
+
+.project_title {
+    width: 100%;
+    color: rgb(255,255,255);
+    }
+
+.project_background {
+    height: 360px;
+    width: 360px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    }
+
+.project_description {
+    color: rgb(255,255,255);
+    }
+
+.github_logo {
+    position: relative;
+    top: -45px;
+    left: 155px;
+    height: 32px;
+    width: 32px;
+    z-index: 1;
+    }
+
+.panel-default>.panel-heading {
+    background-image: none;
+    background-color: rgb(85,81,82);
+    border-color: rgb(46,38,51);
+}
+
+.panel-title {
+    color: rgb(255,255,255);
+    }
+
+.panel {
+    background-color: rgb(46,38,51);
+    color: rgb(255,255,255);
+    }
+
+footer {
+    text-align: right;
+    padding: 2vh 0px;
+    background-color: rgb(85,81,82) ;
+    color: rgb(239,255,205);
+    }
+
+footer h2 {
+    padding-right: 10vw;
+    color: rgb(239,255,205);
     }
 
 div.matchguess {
@@ -164,12 +324,11 @@ div.matchguess {
 }
 
 
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 480px) {
 
 }
 

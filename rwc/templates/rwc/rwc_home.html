@@ -1,9 +1,42 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load l10n %}
 {% load tz %}
 
 {% block head_title %}Rugby World Cup Score Predictor {% endblock %}
-{% block navbar_title %}Rugby World Cup Score Predictor{% endblock %}
+{% block head_javascript %}
+<script type="text/javascript" src="{% static 'js/jqPlot/jquery.jqplot.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function() {
+            $.jqplot('#graph',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]])
+        }, 0);
+    });
+</script>
+{% endblock %}
+
+{% block navbar %}
+        <div class="navbar">
+            <div class="Title">
+                {% block navbar_title %}Rugby World Cup Score Predictor{% endblock %}
+            </div>
+            <div class="Login">
+            Logged in:
+                <span>
+                {% if user.username == "" %}
+                    none
+                    <a class="btn btn-default" href="{% url 'login' %}" role="button">Login</a>
+                {% else %}
+                    {{ user.username }}
+                    <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
+                {% endif %}
+                </span>
+
+            </div>
+        </div>
+{% endblock %}
+
 {% block content %}
     <div class="jumbotron">
       <div class="container">
@@ -34,7 +67,9 @@
             {% endfor %}
              </tbody>
         </table>
-        </br>
+
+        <div id="graph" style="width:600px;height:400px"></div>
+
         <a class="rwc_link" href="{% url 'rwc_results' %}">Finished Match Results</a>
         <h3>
         <u>Matches Today</u></br>
