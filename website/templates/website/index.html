@@ -6,13 +6,14 @@
 {% block head_title %}Home Page {% endblock %}
 
 {% block navbar %}
+
 <nav class="navbar">
     <div class="nav_menu_button">
         <img class="button_image" src="{% static 'img/menu_dark.png' %}">
     </div>
     <div class="nav_options">
         <div class="page_title">
-            <h1>Home Page</h1>
+            <h1>Portfolio</h1>
         </div></br>
         <a href="#about">
             <div class="nav_option">About</div>
@@ -34,8 +35,31 @@
 {% endblock %}
 
 {% block content %}
-<header class="header" style="background-image: url({% static 'img/balloons-Luca-Upper.jpg' %})">
-    Header
+<header class="header" style="background-image: url({% static 'img/woodchip-paul-green.jpg' %})">
+    <div class="header--bgtint">
+    <div class="header--data">
+            <!--<div class="logo col-sm-8">
+                <img src="{% static 'img/githublogo.png' %}" class="img-circle img-responsive" alt="Logo">
+            </div>-->
+    <div class="header__options">
+        <a href="#about">
+            <div class="header__option">About</div>
+        </a>
+        <a href="#education">
+            <div class="header__option">Education</div>
+        </a>
+        <a href="#projects">
+            <div class="header__option">Projects</div>
+        </a>
+        <a href="#skillset">
+            <div class="header__option">SkillSet</div>
+        </a>
+        <a href="{% static 'BarnettMichaelCV.pdf' %}">
+            <div class="header__option">CV</div>
+        </a>
+    </div>
+        </div>
+    </div>
 </header>
 <div class="content" data-spy="scroll" data-target=".content" data-offset="10">
     <section class="portfolio_section" id="about">
@@ -88,7 +112,7 @@
             <div class="portfolio_project col-md-3" id="score_prediction_challenge">
                 <a href="{% url 'rwc_home' %}">
                     <div class="project_background"
-                         style="background-image: url({% static '' %})">
+                         style="background-image: url({% static 'img/score_predictor_splash.png' %})">
                         <div class="project_title">Score Prediction Challenge</div>
                         <p class="project_description">
                             Text describing the project goes here, whole image is a link to project page
@@ -118,7 +142,7 @@
             <div class="portfolio_project col-md-3" id="loot_filter_generator">
                 <a href="">
                     <div class="project_background"
-                         style="background-image: url({% static '' %})">
+                         style="background-image: url({% static 'img/loot_filter_splash.png' %})">
                         <div class="project_title">PoE Loot Filter</div>
                         <p class="project_description">
                             Generates Loot Filter String

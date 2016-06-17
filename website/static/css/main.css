@@ -63,14 +63,50 @@ a:hover {
     text-decoration: none;
     }
 
-header {
+.header {
     margin-top: -3vh;
-    width: 100vw;
-    color: rgb(85,81,82);
-    height: 25vh;
-    background-position: center;
-    background-size: 102vw 68vw;
-    background-repeat: no-repeat;
+    height: 128vh;
+    background-size: cover;
+    }
+
+.header--bgtint {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25,25,25,0.55);
+    }
+
+.header--data {
+    max-width: 1400px;
+    color: rgb(255,255,255);
+    }
+
+/*.header--data .logo img{
+    width: 300px;
+    height: 300px;
+    background-color: #FFF;
+    margin-top: 33vh;
+    margin-left: 20vw;
+    }*/
+
+.header__options {
+    float: right;
+    padding-right: 100px;
+    height: 100%;
+    padding-top: 25vh;
+    font-size: 4em; /*-webkit-xxx-large;*/
+    text-align: right;
+}
+
+.header__options a {
+    color: rgb(255,255,255);
+    }
+
+.header__options a:hover {
+    color: rgb(51, 122, 183);
+    }
+
+.header__option {
+    margin-bottom: 0.4em;
     }
 
 body {
@@ -78,35 +114,33 @@ body {
     }
 
 .navbar {
-    position: fixed;/*position-left: -5vw;*/
-    background-color: rgba(85,81,82,0);
-    color: rgb(153,23,60);
-    font-weight:bold;
+    position: fixed;
+    background-color: rgba(25,25,25,0);
+    font-weight: bold;
     text-align: center;
     margin-top: 0%;
     width: 100vw;
-    height: 15vh;
+    height: 9vh;
     z-index: 10;
 }
 
 .navbar.expanded {
     position: fixed;
-    /*height: 115vh;*/
-    background-color: rgba(85,81,82,0.9);
+    background-color: rgba(25,25,25,0.5);
     color: rgb(255,255,255);
     }
 
 .navbar:hover {
-    background-color: rgba(85,81,82,0.95);
+    background-color: rgba(25,25,25,0.8);
     }
 
 .navbar.expanded:hover {
-    background-color: rgba(85,81,82,0.95);
+    background-color: rgba(25,25,25,0.8);
     }
 
 .navbar .nav_menu_button {
-    margin-top: 18px;
-    margin-right: 18px;
+    margin-top: 1.5vh;
+    margin-right: 1.5vw;
     display: inline;
     float:right;
     }
@@ -137,8 +171,8 @@ body {
     }
 
 .navbar .nav_option:hover {
-    border-top: solid 1px rgb(46,38,51);
-    border-bottom: solid 1px rgb(46,38,51);
+    border-top: solid 1px rgb(255,255,255);
+    border-bottom: solid 1px rgb(255,255,255);
 }
 
 .navbar div {
@@ -227,15 +261,13 @@ body {
 }
 
 .content {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: auto;
     position: relative;
     }
 
 .portfolio_section {
     color: rgb(46,38,51);
-    /*padding: 1vh 10vw;*/
-    /*width: 100vw;*/
     font-size: 1.3em;
     }
 
@@ -245,10 +277,8 @@ body {
     font-size: 2em;
     font-weight: bold;
     color: rgb(153,23,60);
-    }
-
-.portfolio_section--highlightbg {
-    background-color: rgb(239,255,205);
+    margin: 3vh 35%;
+    min-width: 190px;
     }
 
 #pluralsight_link {
@@ -268,7 +298,7 @@ body {
 
 .project_title {
     width: 100%;
-    color: rgb(255,255,255);
+    color: rgb(153,23,60);
     }
 
 .project_background {
@@ -279,7 +309,7 @@ body {
     }
 
 .project_description {
-    color: rgb(255,255,255);
+    color: rgb(153,23,60);
     }
 
 .github_logo {
@@ -309,13 +339,20 @@ body {
 footer {
     text-align: right;
     padding: 2vh 0px;
-    background-color: rgb(85,81,82) ;
-    color: rgb(239,255,205);
+    background-color: rgba(25, 25, 25, 0.8) ;
+    color: rgb(255,255,255);
     }
 
 footer h2 {
     padding-right: 10vw;
-    color: rgb(239,255,205);
+    }
+
+footer a {
+    color: rgb(255,255,255);
+    }
+
+footer a:hover {
+    color: rgb(51, 122, 183);
     }
 
 div.matchguess {
@@ -327,10 +364,6 @@ div.matchguess {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
-@media only screen and (max-width: 480px) {
-
-}
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),

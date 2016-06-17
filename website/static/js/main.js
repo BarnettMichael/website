@@ -1,8 +1,23 @@
 $(document).ready(function() {
 
+    if($(window).width() < 800) {
+        $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark_medium.png');
+        }
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+            }, 750, 'swing');
+        });
+
     $('.navbar').click(function() {
         if ($(this).hasClass('expanded')){
-            $(this).animate({height: '15vh'});
+            $(this).animate({height: '10vh'});
             }
         else {
             $(this).animate({height: '115vh'});
@@ -16,12 +31,23 @@ $(document).ready(function() {
         });
 
     $('.navbar').hover(function() {
-        $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_light.png');
+
+        if ($(window).width() < 800) {
+            $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_light_medium.png');
+        }
+        else {
+            $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_light.png');
+        }
     }, function() {
-        $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark.png');
+        if ($(window).width() < 800) {
+            $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark_medium.png');
+        }
+        else {
+            $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark.png');
+        }
     });
 
-    $('.portfolio_project').hover(function() {
+    /*$('.portfolio_project').hover(function() {
         $(this).css('width', '+=10px');
         $(this).css('height', '+=10px');
         $('.project_background', this).css('margin-top', '+=5px');
@@ -31,7 +57,8 @@ $(document).ready(function() {
         $(this).css('height', '-=10px');
         $('.project_background', this).css('margin-top', '-=5px');
         $('.project_background', this).css('margin-left', '-=5px');
-    });
+    });*/
+
     /*$('.Cv_Button a div, .Score_Predictor a div').hover(function() {
         $(this).css('font-size', '+=2px');
         $(this).css('color', '#006767');
