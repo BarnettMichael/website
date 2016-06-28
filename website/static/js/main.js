@@ -47,46 +47,9 @@ $(document).ready(function() {
         }
     });
 
-    /*$('.portfolio_project').hover(function() {
-        $(this).css('width', '+=10px');
-        $(this).css('height', '+=10px');
-        $('.project_background', this).css('margin-top', '+=5px');
-        $('.project_background', this).css('margin-left', '+=5px');
+    $('.portfolio_project').hover(function() {
+        $(this).find('.project_button').css('visibility', 'visible');
     }, function() {
-        $(this).css('width', '-=10px');
-        $(this).css('height', '-=10px');
-        $('.project_background', this).css('margin-top', '-=5px');
-        $('.project_background', this).css('margin-left', '-=5px');
-    });*/
-
-    /*$('.Cv_Button a div, .Score_Predictor a div').hover(function() {
-        $(this).css('font-size', '+=2px');
-        $(this).css('color', '#006767');
-        $(this).css('background-color', '#003636');
-    }, function() {
-        $(this).css('font-size', '-=2px');
-        $(this).css('color', '#003636');
-        $(this).css('background-color', '#3E7F7F');
+        $(this).find('.project_button').css('visibility', 'hidden');
     });
-
-    $('.Projects_Menu').hover(function() {
-        $(this).css('font-size', '+=1px');
-        $(this).css('color', '#006767');
-        $(this).css('background-color', '#003636');
-        $('.Projects_List').finish().slideDown('medium');
-        }, function() {
-        $(this).css('font-size', '-=1px');
-        $(this).css('color', '#003636');
-        $(this).css('background-color', '#3E7F7F');
-        $('.Projects_List').finish().slideUp('slow');
-    });
-
-    $('.Project').hover(function() {
-        $(this).css('font-size', '+=1px');
-        $(this).css('color', '#006767');
-        $(this).css('background-color', '#003636');
-        }, function() {
-        $(this).css('font-size', '-=1px');
-        $(this).css('color', '#003636');
-        $(this).css('background-color', '#3E7F7F');});*/
 });

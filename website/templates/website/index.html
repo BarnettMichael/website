@@ -7,7 +7,7 @@
 
 {% block navbar %}
 
-<nav class="navbar">
+<nav class="navbar" xmlns="http://www.w3.org/1999/html">
     <div class="nav_menu_button">
         <img class="button_image" src="{% static 'img/menu_dark.png' %}">
     </div>
@@ -37,27 +37,27 @@
 {% block content %}
 <header class="header" style="background-image: url({% static 'img/woodchip-paul-green.jpg' %})">
     <div class="header--bgtint">
-    <div class="header--data">
+        <div class="header--data">
             <!--<div class="logo col-sm-8">
                 <img src="{% static 'img/githublogo.png' %}" class="img-circle img-responsive" alt="Logo">
             </div>-->
-    <div class="header__options">
-        <a href="#about">
-            <div class="header__option">About</div>
-        </a>
-        <a href="#education">
-            <div class="header__option">Education</div>
-        </a>
-        <a href="#projects">
-            <div class="header__option">Projects</div>
-        </a>
-        <a href="#skillset">
-            <div class="header__option">SkillSet</div>
-        </a>
-        <a href="{% static 'BarnettMichaelCV.pdf' %}">
-            <div class="header__option">CV</div>
-        </a>
-    </div>
+            <div class="header__options">
+                <a href="#about">
+                    <div class="header__option">About</div>
+                </a>
+                <a href="#education">
+                    <div class="header__option">Education</div>
+                </a>
+                <a href="#projects">
+                    <div class="header__option">Projects</div>
+                </a>
+                <a href="#skillset">
+                    <div class="header__option">SkillSet</div>
+                </a>
+                <a href="{% static 'BarnettMichaelCV.pdf' %}">
+                    <div class="header__option">CV</div>
+                </a>
+            </div>
         </div>
     </div>
 </header>
@@ -65,13 +65,11 @@
     <section class="portfolio_section" id="about">
         <h1 class="portfolio_section--title">About</h1>
         <div class="portfolio_section--content">
-            <p class="">
-                I am a primarily self-taught backend coder, I have a strong logical foundation, am good at solving
-                abstract problems. High attention to detail. BLAH BLAH  BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-                 BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-                 BLAH BLAH BLAH BLAH BLAH.
-                 BLAH BLAH BLAH.
-                 BLAH BLAH BLAH BLAH.
+            <p class="about__data">
+                Hi my name is Mike and I am a primarily self-taught backend coder, I like to solve puzzles and build things.
+                I have worked mostly with Python, learning programming techniques such as OOP as I go.
+                I have also built a website using the Django framework that allowed me to learn some HTML and CSS as well
+                as practice my Javascript and jQuery. I hope you enjoy my portfolio and please feel free to contact me with any questions.
             </p>
         </div>
     </section>
@@ -81,7 +79,6 @@
             <ul>
                 <li>
                     <strong>Just IT Development Professional Programme</strong></br>
-                    May 2016 - Current:
                     <a href="https://app.pluralsight.com/id/profile/barnettmichael" id="pluralsight_link">
                         Pluralsight profile
                     </a>
@@ -113,15 +110,12 @@
                 <a href="{% url 'rwc_home' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/score_predictor_splash.png' %})">
-                        <div class="project_title">Score Prediction Challenge</div>
-                        <p class="project_description">
-                            Text describing the project goes here, whole image is a link to project page
-                            Should be centered over image, (desktop)maybe only appears on hover or gets brighter
-                            on hover
-                        </p>
+                        <div class="project_button">
+                            <div class="project_title"><h2>Score Prediction Challenge</h2></div>
+                        </div>
                     </div>
                 </a>
-                <a class="project github_button" href="">
+                <a class="project github_button" href="https://github.com/BarnettMichael/website">
                     <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
                 </a>
             </div>
@@ -129,13 +123,12 @@
                 <a href="">
                     <div class="project_background"
                          style="background-image: url({% static 'img/FFHelperRunning.png' %})">
-                        <div class="project_title">FFHelper</div>
-                        <p class="project_description">
-                            Fantasy Football picker assistant
-                        </p>
+                        <div class="project_button">
+                            <div class="project_title"><h2>FFHelper</h2></div>
+                        </div>
                     </div>
                 </a>
-                <a class="project github_button" href="">
+                <a class="project github_button" href="https://github.com/BarnettMichael/FantasyFootballHelper">
                     <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
                 </a>
             </div>
@@ -143,13 +136,12 @@
                 <a href="">
                     <div class="project_background"
                          style="background-image: url({% static 'img/loot_filter_splash.png' %})">
-                        <div class="project_title">PoE Loot Filter</div>
-                        <p class="project_description">
-                            Generates Loot Filter String
-                        </p>
+                        <div class="project_button">
+                            <div class="project_title"><h2>PoE Loot Filter</h2></div>
+                        </div>
                     </div>
                 </a>
-                <a class="project github_button" href="">
+                <a class="project github_button" href="https://github.com/BarnettMichael/PoELootFilterGenerator">
                     <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
                 </a>
             </div>
@@ -162,120 +154,156 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#python_string">
-                        <h2 class="panel-title">
-                            Python 2.7
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                70%
+                            <h2 class="panel-title">
+                                Python 2.7
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="python_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Built stuff in python
+                            <ul>
+                                <li>
+                                    <b>Projects:</b>
+                                    <ul>
+                                        <li>FFhelper: Use Scrapy, SQLAlchemy and postgres to collect data into a database.</br>
+                                            Use data in database displayed on a tkinter GUI within the application.<br>
+                                        </li>
+                                        <li>POE Loot Filter Generator: Outputs a string depending on the data stored in dictionaries within the file.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>newcoder.io tutorials:</b>
+                                    <ul>
+                                        <li>Data Visualisation: import a csv file, make a graph using matplotlib, output a GeoJSON file that can be mapped.</li>
+                                        <li>API: Interacting with a public API</li>
+                                        <li>Web Scraping: Use Scrapy, SQLAlchemy and Postgres to collect data and imput it into a database</li>
+                                        <li>GUI: Use tkinter to build an interactive display for a simple sudoku game</li>
+                                    </ul>
+                                </li>
+                                <li><b>Learn Python the Hard Way ebook</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#django_string">
-                        <h2 class="panel-title">
-                            Django
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                                75%
+                            <h2 class="panel-title">
+                                Django
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="django_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Built this website and rwc webapp
+                            <ul>
+                                <li><b>Score Predictor Website</b>
+                                    <ul>
+                                        <li>Wrote models to represent user, match, guess</li>
+                                        <li>Wrote some admin methods</li>
+                                        <li>Queried a database</li>
+                                        <li>Uses Django built in user authentication</li>
+                                        <li>Wrote regex for url matching</li>
+                                    </ul>
+                                </li>
+                                <li><b>Djangogirls tutorial</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#html_string">
-                        <h2 class="panel-title">
-                            HTML CSS
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                                60%
+                            <h2 class="panel-title">
+                                HTML CSS
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="html_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Enough to support development of web app and this responsive website
+                            <ul>
+                                <li><b>Integrated HTML with django tags and blocks to provide data-driven views</b></li>
+                                <li><b>Bootstrap integration in website design</b></li>
+                                <li><b>Pluralsight courses on HTML5 and CSS3</b></li>
+                                <li><b>Codeacademy.com course on HTML/CSS and Sass</b></li>
+                                <li><b>Designed and built this website to be responsive through use of media queries</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#javascript_string">
-                        <h2 class="panel-title">
-                            Javascript
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                                30%
+                            <h2 class="panel-title">
+                                Javascript
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="javascript_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Add interactivity to websites, used jquery library
+                            <ul>
+                                <li><b>Wrote Javascript and jQuery scripts to produce animations on website</b></li>
+                                <li><b>Codeacademy.com course on Javascript and jQuery</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#csharp_string">
-                        <h2 class="panel-title">
-                            C#
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                                40%
+                            <h2 class="panel-title">
+                                C#
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="csharp_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Did a bunch of exercises
+                            <ul>
+                                <li><b>Two week bootcamp: covered syntax, OOP, LINQ, File IO</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sql_string">
-                        <h2 class="panel-title">
-                            SQL Postgres
-                        </h2>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                                40%
+                            <h2 class="panel-title">
+                                SQL and Postgres
+                            </h2>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                     <div id="sql_string" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Used to scrape data into a database and then fetch the data in FFHelper project
+                            <b>Used to scrape data into a database and then fetch the data in FFHelper project</b>
                         </div>
                     </div>
                 </div>
@@ -283,65 +311,4 @@
         </div>
     </section>
 </div>
-<!--<div class="about_me">
-    <h2>About</h2>
-    <p width="85%">
-        This is a paragraph of text explaining that the website is currently under construction.
-        Who i am etc.
-        Built using Django.
-    </p>
-</div>
-<div class="cv">
-    <a href="">CV</a>
-</div>
-<div class="projects">
-    <h2>Projects</h2>
-    <table width="85%">
-        <thead>
-            <tr>
-                <th>Project</th>
-                <th>Github</th>
-                <th>Documentation</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr id="poe_loot_filter">
-            <td><a href="">poe loot filter generator</a></td>
-            <td><a href="">coming soon</a></td>
-            <td><a href="">coming soon</a></td>
-        </tr>
-        <tr id="ffhelper">
-            <td><a href="">Fantasy Football Draft Helper</a></td>
-            <td><a href="">coming soon</a></td>
-            <td><a href="">coming soon</a></td>
-        </tr>
-        <tr id="rwc_site">
-            <td><a href="{% url 'rwc_home' %}">Rugby World Cup Challenge</a></td>
-            <td><a href="https://github.com/BarnettMichael/website/tree/master/rwc">link</a></td>
-            <td><a href="">coming soon</a></td>
-        </tr>
-        <tr id="website">
-            <td><a href="{% url 'home' %}">This Website</a></td>
-            <td><a href="https://github.com/BarnettMichael/website">link</a></td>
-            <td><a href="">coming soon</a></td>
-        </tr>
-        <tr id="other">
-            <td><a href="">Misc Other Stuff</a></td>
-            <td><a href="">coming soon</a></td>
-            <td><a href="">coming soon</a></td>
-        </tr>
-
-        </tbody>
-    </table>
-</div>-->
-<!--
-<h2 id="local-date">{{today}}</h2>
-<p>This is the time using your local information</p>
-<h2 id="non-local-date">{{today|unlocalize}}</h2>
-<p>This is the default time format</p>
-<h2>Time Zones</h2>
-<p> London: <span id="time-tz">{{now|time:"H:i"}}</span></p>
-<p> UTC: <span id="time-utc">{{now|utc|time:"H:i"}}</span></p>
-<p> New York: <span id="time-ny">{{now|timezone:"America/New_York"|time:"H:i"}}</span></p>
--->
 {% endblock %}
