@@ -1,0 +1,84 @@
+{% extends "website/index.html" %}
+{% load staticfiles %}
+
+
+
+{% block head_title %}Project Test Page {% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}" type="text/css">
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar">
+    <div class="nav_menu_button">
+        <img class="button_image" src="{% static 'img/menu_dark.png' %}">
+    </div>
+    <div class="nav_options">
+        <div class="page_title">
+            <h1>Project</h1>
+        </div></br>
+        <a href="{% url 'home' %}">
+            <div class="nav_option">Portfolio</div>
+        </a>
+        <a href="{% static 'BarnettMichaelCV.pdf' %}">
+            <div class="nav_option">CV</div>
+        </a></br>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<header class="header">
+    <div class="project_title">
+        {% block content_title %} NAME OF PROJECT {% endblock %}
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 text_column">
+            <section class="project_description">
+                <div class="section_title">Description</div>
+                <div class="project_description_text">
+                {% block project_description %}
+
+                HERE YOU DESCRIBE WHAT THE PROJECT IS
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
+                Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phasellus convallis sodales massa in faucibus. Pellentesque consequat pharetra arcu, non facilisis arcu. Sed sodales mauris vel mauris efficitur facilisis. Vestibulum hendrerit convallis augue, non consectetur odio malesuada non. Mauris consequat rutrum turpis a facilisis. Praesent viverra lobortis fermentum. Cras non euismod nisi, posuere commodo mauris. Pellentesque cursus quis nunc vitae accumsan. Nunc est turpis, ornare at interdum eu, aliquam a lacus. Duis ex nisi, faucibus quis laoreet at, pellentesque in nulla. In interdum metus vel neque feugiat, id pharetra purus gravida. Sed felis diam, venenatis vitae tempor interdum, semper eu enim.
+
+                {% endblock %}
+                </div>
+
+            </section>
+
+            <section class="project_skills">
+                <div class="section_title">Skills Used</div>
+                <div class="project_skills_text">
+                {% block project_skills %}
+
+                PUT SKILL AND TECH USED IN THE PROJECT HERE
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
+                Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phasellus convallis sodales massa in faucibus. Pellentesque consequat pharetra arcu, non facilisis arcu. Sed sodales mauris vel mauris efficitur facilisis. Vestibulum hendrerit convallis augue, non consectetur odio malesuada non. Mauris consequat rutrum turpis a facilisis. Praesent viverra lobortis fermentum. Cras non euismod nisi, posuere commodo mauris. Pellentesque cursus quis nunc vitae accumsan. Nunc est turpis, ornare at interdum eu, aliquam a lacus. Duis ex nisi, faucibus quis laoreet at, pellentesque in nulla. In interdum metus vel neque feugiat, id pharetra purus gravida. Sed felis diam, venenatis vitae tempor interdum, semper eu enim.
+
+                {% endblock %}
+                    </div>
+            </section>
+        </div>
+        <div class="col-md-6 media_column">
+            <section class="project_media">
+                {% block project_media %}
+
+                PUT PROJECT SCREENSHOTS AND VIDEOS HERE
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
+                Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phas
+
+                {% endblock %}
+
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

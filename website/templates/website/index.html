@@ -6,8 +6,7 @@
 {% block head_title %}Home Page {% endblock %}
 
 {% block navbar %}
-
-<nav class="navbar" xmlns="http://www.w3.org/1999/html">
+<nav class="navbar">
     <div class="nav_menu_button">
         <img class="button_image" src="{% static 'img/menu_dark.png' %}">
     </div>
@@ -107,7 +106,7 @@
         <h1 class="portfolio_section--title">Projects</h1>
         <div class="portfolio_section--content row">
             <div class="portfolio_project col-md-3" id="score_prediction_challenge">
-                <a href="{% url 'rwc_home' %}">
+                <a href="{% url 'project_score_predictor' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/score_predictor_splash.png' %})">
                         <div class="project_button">
@@ -120,7 +119,7 @@
                 </a>
             </div>
             <div class="portfolio_project col-md-3" id="ffhelper">
-                <a href="">
+                <a href="{% url 'project_ffhelper' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/FFHelperRunning.png' %})">
                         <div class="project_button">
@@ -133,7 +132,7 @@
                 </a>
             </div>
             <div class="portfolio_project col-md-3" id="loot_filter_generator">
-                <a href="">
+                <a href="{% url 'project_lootfilter' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/loot_filter_splash.png' %})">
                         <div class="project_button">
