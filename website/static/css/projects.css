@@ -45,6 +45,24 @@
     font-size: 1.5em;
     }
 
+.media_column {
+    margin-top: 10vh;
+    }
+
 .project_media {
     background-color: rgba(0, 0, 255, 0.2);
+    margin-bottom: 4vh;
+    height: 50vh;
+    }
+
+.github_link {
+    font-size: 2em;
+    text-align: right;
+    }
+
+.webapp_link {
+    text-align: center;
+    color: rgb(153,23,60);
+    font-size: 2.5em;
+    margin-bottom: 1vh;
     }

@@ -5,23 +5,52 @@
 
 {% block head_title %}LOOTFILTER Project{% endblock %}
 
+{% block content_title %} PoE Lootfilter {% endblock %}
+
 {% block project_description %}
-LOOTFILTER TEST
-HERE YOU DESCRIBE WHAT THE PROJECT IS
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
-Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phasellus convallis sodales massa in faucibus. Pellentesque consequat pharetra arcu, non facilisis arcu. Sed sodales mauris vel mauris efficitur facilisis. Vestibulum hendrerit convallis augue, non consectetur odio malesuada non. Mauris consequat rutrum turpis a facilisis. Praesent viverra lobortis fermentum. Cras non euismod nisi, posuere commodo mauris. Pellentesque cursus quis nunc vitae accumsan. Nunc est turpis, ornare at interdum eu, aliquam a lacus. Duis ex nisi, faucibus quis laoreet at, pellentesque in nulla. In interdum metus vel neque feugiat, id pharetra purus gravida. Sed felis diam, venenatis vitae tempor interdum, semper eu enim.
+This is a simple script, that uses a set of dictionaries to store data.
+The script uses a series of functions each of which use the stored data and print a formatted string.
+
+
 {% endblock %}
 
 {% block project_skills %}
-LOOTFILTER
-PUT SKILL AND TECH USED IN THE PROJECT HERE
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
-Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phasellus convallis sodales massa in faucibus. Pellentesque consequat pharetra arcu, non facilisis arcu. Sed sodales mauris vel mauris efficitur facilisis. Vestibulum hendrerit convallis augue, non consectetur odio malesuada non. Mauris consequat rutrum turpis a facilisis. Praesent viverra lobortis fermentum. Cras non euismod nisi, posuere commodo mauris. Pellentesque cursus quis nunc vitae accumsan. Nunc est turpis, ornare at interdum eu, aliquam a lacus. Duis ex nisi, faucibus quis laoreet at, pellentesque in nulla. In interdum metus vel neque feugiat, id pharetra purus gravida. Sed felis diam, venenatis vitae tempor interdum, semper eu enim.
+<ul>
+    <li></li>
+</ul>
 {% endblock %}
 
 {% block project_media %}
-LOOTFILTER MEDIA
-PUT PROJECT SCREENSHOTS AND VIDEOS HERE
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat. Donec sodales massa nec ante malesuada, id tristique neque porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean libero turpis, tincidunt ac lacinia sit amet, dapibus vitae elit.
-Morbi et rutrum turpis. Suspendisse nec finibus dolor. Phas
+<ol class="carousel-indicators">
+    <li data-target="#media_carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#media_carousel" data-slide-to="1"></li>
+    <li data-target="#media_carousel" data-slide-to="2"></li>
+    <li data-target="#media_carousel" data-slide-to="3"></li>
+</ol>
+
+<div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <img src="{% static 'img/FFHelperRunning.png' %}" alt="FFHelperRunning">
+    </div>
+
+    <div class="item">
+        <img src="{% static 'img/FFHelperTest.png' %}" alt="FFHelperTest">
+    </div>
+
+    <div class="item">
+        <img src="{% static 'img/score_predictor_splash.png' %}" alt="ScorePredictorFlash">
+    </div>
+
+    <div class="item">
+        <img src="{% static 'img/menu_dark.png' %}" alt="MenuDark">
+    </div>
+</div>
+{% endblock %}
+
+{% block github_link %}
+<a href="https://github.com/BarnettMichael/PoELootFilterGenerator">See source code on GitHub</a>
+{% endblock %}
+
+{% block link_to_webapp %}
+
 {% endblock %}

@@ -4,82 +4,67 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js" lang="en"> <![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>
-            {% block head_title %}{% endblock %}
-        </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        {% block head_title %}{% endblock %}
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-
-
-        <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
-
-        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
-        <!--[if lte IE 8]>
-            <script language="javascript" type="text/javascript" src="{% static 'js/jqPlot/excanvas.js' %}"></script>
-        <![endif]-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 
-        {% block head_css %}{% endblock %}
-        {% block head_javascript %}{% endblock %}
-    </head>
+    <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
 
-    <body>
-        <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    <!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="{% static 'js/jqPlot/excanvas.js' %}"></script>
+    <![endif]-->
+
+
+    {% block head_css %}{% endblock %}
+    {% block head_javascript %}{% endblock %}
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 {% block navbar %}
-    <div class="navbar">
-        <div class="Cv_Button">
-            <a href="{% static 'BarnettMichaelCV.pdf' %}"><div>CV</div></a>
-        </div>
-        <div class="Spacer"></div>
-        <div class="Title">
-            {% block navbar_title %}base.html{% endblock %}
-        </div>
-        <div class="Spacer"></div>
-        <div class="Projects_Menu">
-            Projects
-            <div class="Projects_List">
-                <a href="{% url 'home' %}"><div class="Project">Website</div></a>
-                <a href=""><div class="Project">Fantasy Football Helper</div></a>
-                <a href=""><div class="Project">Poe Loot Filter Generator</div></a>
-                <a href="{% url 'rwc_home' %}"><div class="Project">Sports Score Challenge</div></a>
-            </div>
-        </div>
-        <div class="Score_Predictor">
-            <a href="{% url 'rwc_home' %}"><div>Prediction Game</div></a>
-        </div>
+<nav class="navbar">
+    <div class="nav_menu_button">
+        <img class="button_image" src="{% static 'img/menu_dark.png' %}">
     </div>
-        <div class="nav_options">
-            <div class="page_title">
-                <h1>Home Page</h1>
-            </div></br>
-            <div class="nav_option">
-                <a href="">Education</a>
-            </div></br>
-            <div class="nav_option">
-                <a href="">SkillSet</a>
-            </div></br>
-            <div class="nav_option">
-                <a href="">Projects</a>
-            </div></br>
-            <div class="nav_option">
-                <a href="{% static 'BarnettMichaelCV.pdf' %}">CV</a>
-            </div></br>
-        </div>
+    <div class="nav_options">
+        <div class="page_title">
+            <h1>Project</h1>
+        </div></br>
+        <a href="{% url 'home' %}">
+            <div class="nav_option">Portfolio</div>
+        </a>
+        <a href="{% url 'project_score_predictor' %}">
+            <div class="nav_option">Score Prediction Challenge</div>
+        </a>
+        <a href="{% url 'project_ffhelper' %}">
+            <div class="nav_option">Fantasy Football Helper</div>
+        </a>
+        <a href="{% url 'project_lootfilter' %}">
+            <div class="nav_option">Loot Filter Generator</div>
+        </a>
+        <a href="{% static 'BarnettMichaelCV.pdf' %}">
+            <div class="nav_option">CV</div>
+        </a>
     </div>
+</nav>
 {% endblock %}
 
 <main>
@@ -87,26 +72,26 @@
 </main>
 <footer>
     {% block footer %}
-        <a href="https://github.com/BarnettMichael">
-            <h2>Github</h2>
-        </a>
-        <a href="{% static 'BarnettMichaelCV.pdf' %}">
-            <h2>CV</h2>
-        </a>
+    <a href="https://github.com/BarnettMichael">
+        <h2>Github</h2>
+    </a>
+    <a href="{% static 'BarnettMichaelCV.pdf' %}">
+        <h2>CV</h2>
+    </a>
     {% endblock%}
 </footer>
 
 
-        <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!--<script>-->
-            <!--(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=-->
-            <!--function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;-->
-            <!--e=o.createElement(i);r=o.getElementsByTagName(i)[0];-->
-            <!--e.src='//www.google-analytics.com/analytics.js';-->
-            <!--r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));-->
-            <!--ga('create','UA-XXXXX-X','auto');ga('send','pageview');-->
-        <!--</script>-->
-    </body>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--<script>-->
+<!--(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=-->
+<!--function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;-->
+<!--e=o.createElement(i);r=o.getElementsByTagName(i)[0];-->
+<!--e.src='//www.google-analytics.com/analytics.js';-->
+<!--r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));-->
+<!--ga('create','UA-XXXXX-X','auto');ga('send','pageview');-->
+<!--</script>-->
+</body>
 </html>
