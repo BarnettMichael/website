@@ -139,8 +139,8 @@ body {
     }
 
 .navbar .nav_menu_button {
-    margin-top: 1.5vh;
-    margin-right: 1.5vw;
+    margin-top: 2vh;
+    margin-right: 3.5vw;
     display: inline;
     float:right;
     }
@@ -277,7 +277,8 @@ body {
     font-size: 2em;
     font-weight: bold;
     color: rgb(153,23,60);
-    margin: 3vh 35%;
+    margin: 3vh auto;
+    width: 30vw;
     min-width: 190px;
     }
 

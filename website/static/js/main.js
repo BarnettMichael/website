@@ -1,8 +1,13 @@
-$(document).ready(function() {
-
-    if($(window).width() < 800) {
+if($(window).width() < 800) {
         $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark_medium.png');
         }
+else {
+    $('.navbar .nav_menu_button .button_image').attr('src', '../static/img/menu_dark.png');
+        }
+
+$(document).ready(function() {
+
+
 
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
