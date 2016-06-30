@@ -90,10 +90,10 @@ a:hover {
 
 .header__options {
     float: right;
-    padding-right: 100px;
+    padding-right: 5vw;
     height: 100%;
-    padding-top: 25vh;
-    font-size: 4em; /*-webkit-xxx-large;*/
+    padding-top: 15vh;
+    font-size: 12vh;
     text-align: right;
 }
 
