@@ -65,13 +65,16 @@ def update_scores(modeladmin, request, queryset):
 
             user.save()
 
-        for guess in match_guesses:
-            user = guess.user
-            user_guess = Guess.objects.filter(user=user).get(match=match)
-            if user_guess.winning_team == match.winning_team:
-                if abs(user_guess.score_difference - match.score_difference) == min(point_differences):
-                    user.points += 1
-                    user.save()
+        # Check if anybody guessed guessed the correct winning team, and if so give bonus point to user
+        # who is closest.
+
+        if bool(point_differences):                                       # empty_list == False
+            for guess in match_guesses:
+                user = guess.user
+                if guess.winning_team == match.winning_team:
+                    if abs(guess.score_difference - match.score_difference) == min(point_differences):
+                        user.points += 1
+                        user.save()
 
 def make_guesses(modeladmin, request, queryset):
     """
