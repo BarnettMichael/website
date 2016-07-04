@@ -110,6 +110,7 @@ a:hover {
     }
 
 body {
+    font-size: 1em;
     color: rgb(46,38,51);
     }
 
@@ -125,9 +126,9 @@ body {
 }
 
 .navbar.expanded {
-    position: fixed;
     background-color: rgba(25,25,25,0.5);
     color: rgb(255,255,255);
+    font-size: 3.3vh;
     }
 
 .navbar:hover {
@@ -158,8 +159,8 @@ body {
     }
 
 .navbar .page_title {
-    margin-top: 6vh;
-    margin-bottom: 5.5vh;
+   /* margin-top: 6vh;
+    margin-bottom: 5.5vh;*/
     font-size: 2em;
     }
 
@@ -178,7 +179,6 @@ body {
 .navbar div {
     display: none;
     padding-top: 0.5em;
-    padding-bottom: 1em;
     display: inline-block;
     position: relative;
     font-weight: bold;
@@ -374,11 +374,30 @@ footer a:hover {
     color: rgb(51, 122, 183);
     }
 
-div.matchguess {
-    border: 1px solid #191919;
-    text-align: center;
-}
+.login_section {
+    height: 53.4vh;
+    }
 
+.login_form {
+    margin: 4vh auto;
+    font-size: 1.4em;
+    position:relative;
+    }
+
+.login_form #id_username, .login_form #id_password {
+    width: 250px;
+    }
+
+.login_button {
+    left: 288px;
+    position: absolute
+    }
+
+.login_error {
+    text-align: center;
+    font-size: 2em;
+    margin: 10vh auto;
+    }
 
 /* ==========================================================================
    Media Queries

@@ -4,30 +4,39 @@
 
 {% block head_title %} {{ user.user.name }} Guesses {% endblock %}
 
-{% block navbar_title %} RWC Guesses {% endblock %}
-
 {% block content %}
-    <div class="jumbotron">
-      <div class="container">
-      <p>This is where you make your guesses, you currently have to click save for every match</br>
-            One Weeks games displayed at a time.</br>
-            If you want to choose a draw just set the points difference to 0, and pick either team.
-            Closest person to actual points difference of those who pick the correct winning team gets a bonus point.
+<header class="header">
+    <div class="score_predictor_title">
+        {{ user.username }} Guesses
+    </div>
+    <div class="header_logout">
+        {% if user.username != "" %}
+        Hi {{ user.username }}: <a href="{% url 'logout' %}?next={% url 'rwc_home' %}">Logout</a>
+        {% endif %}
+    </div>
+</header>
+      <div class="container-fluid">
+      <p class="guess_intro_text">
+          <ul>
+          <li>This is where you make your guesses, you currently have to click save for every match</li>
+            <li>One Weeks games displayed at a time.</li>
+            <li>If you want to choose a draw just set the points difference to 0, and pick either team.</li>
+            <li>Closest person to actual points difference of those who pick the correct winning team gets a bonus point.</li>
+          <ul>
       </p>
       </div>
-    </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
-            <table>
+            <div class="col-xs-12">
+            <table class="guess_formset">
                 <thead>
-                    <tr><th colspan="5"> Matches</th></tr>
+                    <tr><th colspan="4"> Matches</th></tr>
                     <tr>
                         <th>Match</th>
-                        <th>Date</th>
-                        <th>Team Chosen</th>
-                        <th colspan="2">Predicted Score Difference</th>
+                        <!--<th>Date</th>-->
+                        <th>Winner</th>
+                        <th>Margin</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +44,6 @@
                     <form method="post" class="guess-form"> {% csrf_token %}
                     <tr>
                         <td>{{ form.match }}</td>
-                        <td>{{ form.time }}</td>
                         <td>{{ form.winning_team}}</td>
                         <td>{{ form.score_difference }}</td>
                         <td>
@@ -52,4 +60,12 @@
     <div class="next_week_button">
         <a href = "{% url 'rwc_guesses_more' pk=pk %}">Next Week Matches</a>
     </div>
+    <div class="formset">
+        {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form.match }}
+        {% endfor %}
+    </div>
+
+
 {% endblock %}

@@ -5,14 +5,14 @@ from django.contrib.auth.decorators import login_required
 
 
 from .models import User, Team, Match, Guess
-from .forms import GuessForm
+from .forms import GuessForm, GuessFormSet
 
 # Create your views here.
 
 def rwc_home(request):
 
     users = User.objects.all().order_by('points').reverse()
-    upcoming_matches = Match.objects.all().exclude(time__lt=datetime.datetime.now()).order_by('time')
+
     matches_today = Match.objects.filter(time__year=datetime.datetime.today().year)\
                                  .filter(time__month=datetime.datetime.today().month)\
                                  .filter(time__day=datetime.datetime.today().day)\
@@ -23,8 +23,7 @@ def rwc_home(request):
                                     .filter(time__day=(datetime.datetime.today().day + 1))\
                                     .order_by('time')
 
-    return render(request, 'rwc/rwc_home.html', {'upcoming_matches': upcoming_matches,
-                                                 'matches_today': matches_today,
+    return render(request, 'rwc/rwc_home.html', {'matches_today': matches_today,
                                                  'matches_tomorrow': matches_tomorrow,
                                                  'users': users,
                                                  }
@@ -62,8 +61,15 @@ def rwc_guesses(request):
 
     forms.reverse()
 
+    print "GUESSES", guesses
+    formset = GuessFormSet(queryset=guesses)
+    for form in formset:
+        print "Form", form.as_table()
+
+
     return render(request, 'rwc/rwc_guesses.html', {'user': user,
                                                     'forms': forms,
+                                                    #'formset':formset,
                                                     'matches': matches,
                                                     'guesses': guesses,
                                                     'pk': pk,
@@ -118,17 +124,3 @@ def rwc_guesses_more(request, pk):
                                                     'pk': pk + 1,
                                                     }
                   )
-
-# def test_matplotlib(request):
-#     f = figure(1, figsize=(6,6))
-#     ax = axes([0.1, 0.1, 0.8, 0.8])
-#     labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-#     fracs = [15,30,45,10]
-#     explode(0, 0.05, 0, 0)
-#     pie(fracs, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True)
-#     title('Raining Hogs and Dogs', bbox={'facecolor': '0.8', 'pad':5})
-#
-#     canvas = FigureCanvasAgg(f)
-#     response = HttpResponse(content_type='image/png')
-#     canvas.print_png(response)
-#     return response

@@ -24,7 +24,3 @@ def project_ffhelper(request):
 
 def project_lootfilter(request):
     return render(request, "website/project_lootfilter.html", {})
-
-def user_logout(request):
-    logout(request)
-    return render(request, "registration/logout.html", {})

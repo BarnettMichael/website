@@ -27,6 +27,6 @@ urlpatterns = [
     url(r'^projects/ffhelper/?$', views.project_ffhelper, name='project_ffhelper'),
     url(r'^projects/lootfilter/?$', views.project_lootfilter, name='project_lootfilter'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
-    url(r'^accounts/logout/$', views.user_logout, name='logout'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -3,93 +3,118 @@
 {% load l10n %}
 {% load tz %}
 
-{% block head_title %}Rugby World Cup Score Predictor {% endblock %}
-{% block head_javascript %}
-<script type="text/javascript" src="{% static 'js/jqPlot/jquery.jqplot.js' %}"></script>
+{% block head_title %} Score Predictor Challenge {% endblock %}
 
-<script>
-    $(document).ready(function () {
-        setTimeout(function() {
-            $.jqplot('#graph',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]])
-        }, 0);
-    });
-</script>
+{% block head_css %}
+<link rel="stylesheet" href="{% static 'css/score_predictor.css' %}" type="text/css">
 {% endblock %}
 
-{% block navbar %}
-        <div class="navbar">
-            <div class="Title">
-                {% block navbar_title %}Rugby World Cup Score Predictor{% endblock %}
-            </div>
-            <div class="Login">
-            Logged in:
-                <span>
-                {% if user.username == "" %}
-                    none
-                    <a class="btn btn-default" href="{% url 'login' %}" role="button">Login</a>
-                {% else %}
-                    {{ user.username }}
-                    <a class="btn btn-default" href="{% url 'logout' %}" role="button">Logout</a>
-                {% endif %}
-                </span>
 
-            </div>
-        </div>
+{% block navbar %}
+<nav class="navbar">
+    <div class="nav_menu_button">
+        <img class="button_image" src="">
+    </div>
+    <div class="nav_options">
+        <div class="page_title">
+            <h1>Menu</h1>
+        </div></br>
+        <a href="{% url 'rwc_home' %}">
+            <div class="nav_option">Challenge Home Page</div>
+        </a>
+        <a href="{% url 'rwc_guesses' %}">
+            <div class="nav_option">Edit Your Guesses</div>
+        </a>
+        <a href="{% url 'rwc_results' %}">
+            <div class="nav_option">See Results</div>
+        </a>
+        <a href="{% url 'home' %}">
+            <div class="nav_option">Portfolio</div>
+        </a>
+    </div>
+</nav>
 {% endblock %}
 
 {% block content %}
-    <div class="jumbotron">
-      <div class="container">
-        <p>This is the homepage for the rwc guessing game. Check out the current standings</br>
-            Make your own predictions etc.
-        </p>
-          <p>
-              <a class="rwc_link" href="{% url 'rwc_guesses' %}" role="button">Make/Edit your guesses</a>
-          </p>
-      </div>
+<header class="header">
+    <div class="score_predictor_title">
+        Score Predictor Home Page
     </div>
-
-    <div class="container">
-        <table>
+    <div class="header_logout">
+        {% if user.username != "" %}
+        Hi {{ user.username }}: <a href="{% url 'logout' %}?next={% url 'rwc_home' %}">Logout</a>
+        {% endif %}
+    </div>
+</header>
+<div class="container-fluid content">
+    <section class="introduction">
+        Welcome to the score predictor challenge, Log in and start making guesses,
+        or check how you have been getting on so far.
+    </section>
+    <section class="choices">
+        <div class="row">
+            {% if user.username == "" %}
+            <a href="{% url 'login' %}"><div class="btn-login btn-success btn-lg col-xs-4">Login</div></a>
+            {% else %}
+            <a href="{% url 'rwc_guesses' %}"><div class="btn-choice btn-info btn-lg col-xs-4">Guess</div></a>
+            {% endif %}
+            <a href="{% url 'rwc_results' %}"><div class="btn-choice btn-info btn-lg col-xs-4">Results</div></a>
+        </div>
+    </section>
+    <section class="current_standings">
+        <div class="table_title">
+            Current Standings
+        </div>
+        <table class="standings_table table table-bordered table-responsive">
             <thead>
-                <tr>
-                    <th colspan="2">Current Standings</th>
-                </tr>
-                <tr>
-                    <th>Name</th><th>Points</th>
-                </tr>
+            <tr>
+                <th>Name</th><th>Points</th>
+            </tr>
             </thead>
             <tbody>
             {% for user in users %}
-                <tr>
-                    <td>{{ user.name }}</td><td>{{ user.points }}</td>
-                </tr>
+            <tr>
+                <td>{{ user.name }}</td><td>{{ user.points }}</td>
+            </tr>
             {% endfor %}
-             </tbody>
+            </tbody>
         </table>
+    </section>
+    <section class="upcoming_matches">
+        <div class="row">
+            <div class="matches_today col-sm-6">
+                <div class="match_list_title">
+                    Matches Today
+                </div>
+                <table class="match_list table table-striped table-condensed table-responsive">
+                    <tbody>
+                    {% for match in matches_today %}
+                    <tr>
+                        <td>{{ match }} </td><td> {{ match.time | date:"H:i" }} </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="matches_tomorrow col-sm-6">
+                <div class="match_list_title">
+                    Matches Tomorrow
+                </div>
+                <table class="match_list table table-striped table-condensed table-responsive">
+                    <tbody>
+                    {% for match in matches_tomorrow %}
+                    <tr>
+                        <td>{{ match }} </td><td> {{ match.time | date:"H:i" }} </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-        <div id="graph" style="width:600px;height:400px"></div>
+    </section>
+</div>
+{% endblock %}
 
-        <a class="rwc_link" href="{% url 'rwc_results' %}">Finished Match Results</a>
-        <h3>
-        <u>Matches Today</u></br>
-        {% for match in matches_today %}
-            {{ match }} : {{ match.time }} </br>
-        {% endfor %}
-        </h3>
-
-        <h4>
-        <u>Matches Tomorrow</u></br>
-        {% for match in matches_tomorrow %}
-            {{ match }} : {{ match.time }} </br>
-        {% endfor %}
-        </h4>
-
-        <h4>Next to work on</h4>
-        <ul>
-            <li>Improve look</li>
-            <li>add points scored per game to results tables
-            <li>save all guesses with a single button</li>
-        </ul>
-    </div>
+{% block footer %}
+<a href="{% url 'home' %}"><h2>Portfolio</h2></a>
 {% endblock %}

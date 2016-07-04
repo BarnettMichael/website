@@ -1,0 +1,140 @@
+.header {
+    height: 35vh;
+    background-color: rgb(0, 150, 255);
+    position: relative;
+    }
+
+.score_predictor_title {
+    text-align: center;
+    position: relative;
+    top: 15vh;
+    text-decoration: none;
+    font-size: 5.8vw;
+    padding-top: 0px;
+    color: rgb(255,255,255);
+    margin: auto;
+    }
+
+.header_logout {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    }
+
+.header_logout a{
+    color: orange;
+    }
+
+.introduction {
+    margin: 5vh auto;
+    font-size: 1.5em;
+
+    }
+
+.btn-choice, .btn-login {
+    width: 35%;
+    margin: 5vh 7%;
+    text-align: center;
+    }
+
+.btn-choice a {
+    color: rgb(255, 255,255);
+    }
+
+.table_title {
+    text-align: center;
+    margin: 3vh auto -3vh auto;
+    font-size: 2.8em;
+    font-weight: bold;
+    }
+
+.standings_table {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 5vh auto;
+    }
+
+.standings_table th {
+    text-align: center;
+    font-size: 1.7em;
+    }
+
+.match_list_title {
+    text-align: center;
+    font-size: 1.4em;
+    text-decoration: underline;
+    margin-bottom: 1vh;
+    }
+
+.match_list {
+    text-align: center;
+    }
+
+/******************************************* GUESSES PAGE ******************************************************/
+
+.guess_intro_text {
+    margin: 2vh auto;
+    }
+
+.guess_formset {
+    margin: auto;
+    text-align: center;
+    }
+
+.guess_formset th {
+    text-align: center;
+    }
+
+#id_match {
+    width: 210px;
+    }
+
+#id_winning_team {
+    width: 110px;
+    }
+
+#id_score_difference {
+    width: 42px;
+    }
+
+.next_week_button {
+    text-align: right;
+    padding: 2vh 3vw;
+    font-size: 1.2em;
+    }
+
+/******************************************* RESULTS PAGE ***********************************************************/
+
+.results_tables {
+    margin: 2vh auto;
+    text-align: center;
+    }
+
+.match_results {
+    text-align: center;
+    margin-bottom: 2vh;
+    }
+
+.result_title {
+    font-size: 1.4em;
+    text-decoration: underline;
+}
+
+.result_time {
+    font-size: 0.8em;
+}
+
+.result_winner {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.result_margin {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.guess_table {
+}
