@@ -22,7 +22,7 @@ from . import views
 urlpatterns = [
     url(r'^rwc', include('rwc.urls')),
     url(r'^$', views.home, name='home'),
-    url(r'^project_test/?$', views.project_test, name='project_test'),
+    #url(r'^project_test/?$', views.project_test, name='project_test'),
     url(r'^projects/score_predictor/?$', views.project_score_predictor, name='project_score_predictor'),
     url(r'^projects/ffhelper/?$', views.project_ffhelper, name='project_ffhelper'),
     url(r'^projects/lootfilter/?$', views.project_lootfilter, name='project_lootfilter'),

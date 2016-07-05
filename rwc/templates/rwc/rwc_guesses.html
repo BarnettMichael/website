@@ -15,57 +15,48 @@
         {% endif %}
     </div>
 </header>
-      <div class="container-fluid">
-      <p class="guess_intro_text">
-          <ul>
-          <li>This is where you make your guesses, you currently have to click save for every match</li>
-            <li>One Weeks games displayed at a time.</li>
-            <li>If you want to choose a draw just set the points difference to 0, and pick either team.</li>
-            <li>Closest person to actual points difference of those who pick the correct winning team gets a bonus point.</li>
-          <ul>
-      </p>
-      </div>
+<div class="container-fluid">
+    <p class="guess_intro_text">
+    <ul>
+        <li>This is where you make your guesses, you currently have to click save for every match</li>
+        <li>One Weeks games displayed at a time.</li>
+        <li>If you want to choose a draw just set the points difference to 0, and pick either team.</li>
+        <li>Closest person to actual points difference of those who pick the correct winning team gets a bonus point.</li>
+        <ul>
+    </p>
+</div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-            <table class="guess_formset">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <form method="post" class="guess-form"> {% csrf_token %}
+                {{ formset.management_form }}
+                <table class="guess_formset">
                 <thead>
-                    <tr><th colspan="4"> Matches</th></tr>
-                    <tr>
-                        <th>Match</th>
-                        <!--<th>Date</th>-->
-                        <th>Winner</th>
-                        <th>Margin</th>
-                    </tr>
+                <tr><th colspan="4"> Matches</th></tr>
+                <tr>
+                    <th>Match</th>
+                    <th>Winner</th>
+                    <th>Margin</th>
+                </tr>
                 </thead>
                 <tbody>
-                    {% for form in forms %}
-                    <form method="post" class="guess-form"> {% csrf_token %}
+                {% for form in formset reversed %}
                     <tr>
-                        <td>{{ form.match }}</td>
-                        <td>{{ form.winning_team}}</td>
-                        <td>{{ form.score_difference }}</td>
-                        <td>
-                            <button type="submit" class="save btn btn-default">Save</button>
-                        </td>
+                        {{form.id}}
+                        <td class="match">{{ form.match }}</td>
+                        <td class="winning_team">{{ form.winning_team}}</td>
+                        <td class="score_difference">{{ form.score_difference }}</td>
                     </tr>
-                    </form>
-                    {% endfor %}
+                {% endfor %}
                 </tbody>
             </table>
+                <button type="submit" class="save save_button btn btn-lg btn-primary">Save</button>
+            </form>
+            <div class="next_week_button">
+                <a href = "{% url 'rwc_guesses_more' pk=pk %}">Next Week Matches</a>
             </div>
         </div>
     </div>
-    <div class="next_week_button">
-        <a href = "{% url 'rwc_guesses_more' pk=pk %}">Next Week Matches</a>
-    </div>
-    <div class="formset">
-        {{ formset.management_form }}
-    {% for form in formset %}
-        {{ form.match }}
-        {% endfor %}
-    </div>
-
-
+</div>
 {% endblock %}

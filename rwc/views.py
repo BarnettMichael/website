@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 
-from .models import User, Team, Match, Guess
-from .forms import GuessForm, GuessFormSet
+from .models import User, Match, Guess
+from .forms import GuessFormSet
 
 # Create your views here.
 
@@ -37,41 +37,32 @@ def rwc_guesses(request):
 
     pk=1
 
-    matches = Match.objects.all().order_by('time')
     guesses = Guess.objects.filter(user=user.user)\
                     .exclude(match__time__lt=datetime.datetime.now())\
                     .exclude(match__time__gt=(datetime.datetime.now() + datetime.timedelta(days=7)))
 
     if request.method == "POST":
 
-        match = Match.objects.get(pk=(request.POST['match']))
-        guess = Guess.objects.filter(user=user.user).filter(match=match)[0]
-        form = GuessForm(request.POST, match=match, instance=guess)
+        formset = GuessFormSet(request.POST)
 
-        if form.is_valid():
+        if formset.is_valid():
 
-            guess = form.save(commit=False)
-            guess.user = user.user
-            guess.save()
+            for i, form in enumerate(formset):
 
-    forms = []
-    for guess in guesses:
-        form = GuessForm(instance=guess, match=guess.match)
-        forms.append(form)
+                guess = form.save(commit=False)
+                guess.user = user.user
+                guess.save()
 
-    forms.reverse()
 
-    print "GUESSES", guesses
     formset = GuessFormSet(queryset=guesses)
-    for form in formset:
-        print "Form", form.as_table()
+
+    for i, form in enumerate(formset):
+        guess = guesses[i]
+        form.set_match_attributes(guess.match)
 
 
     return render(request, 'rwc/rwc_guesses.html', {'user': user,
-                                                    'forms': forms,
-                                                    #'formset':formset,
-                                                    'matches': matches,
-                                                    'guesses': guesses,
+                                                    'formset':formset,
                                                     'pk': pk,
                                                     }
                     )
@@ -93,34 +84,30 @@ def rwc_guesses_more(request, pk):
 
     pk = int(pk)
 
-    matches = Match.objects.all().order_by('time')
     guesses = Guess.objects.filter(user=user.user)\
                     .exclude(match__time__lt=(datetime.datetime.now() + (pk * datetime.timedelta(days=7))))\
                     .exclude(match__time__gt=(datetime.datetime.now() + ((pk + 1) * datetime.timedelta(days=7))))
 
     if request.method == "POST":
 
-        match = Match.objects.get(pk=(request.POST['match']))
-        guess = Guess.objects.filter(user=user.user).filter(match=match)[0]
-        form = GuessForm(request.POST, match=match, instance=guess)
+        formset = GuessFormSet(request.POST)
 
-        if form.is_valid():
+        if formset.is_valid():
 
-            guess = form.save(commit=False)
-            guess.user = user.user
-            guess.save()
+            for i, form in enumerate(formset):
 
-    forms = []
-    for guess in guesses:
-        form = GuessForm(instance=guess, match=guess.match)
-        forms.append(form)
+                guess = form.save(commit=False)
+                guess.user = user.user
+                guess.save()
 
-    forms.reverse()
+    formset = GuessFormSet(queryset=guesses)
+
+    for i, form in enumerate(formset):
+        guess = guesses[i]
+        form.set_match_attributes(guess.match)
 
     return render(request, 'rwc/rwc_guesses.html', {'user': user,
-                                                    'forms': forms,
-                                                    'matches': matches,
-                                                    'guesses': guesses,
+                                                    'formset': formset,
                                                     'pk': pk + 1,
                                                     }
                   )

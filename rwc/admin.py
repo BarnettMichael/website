@@ -9,28 +9,6 @@ admin.site.register(Post)
 admin.site.register(Guess)
 admin.site.register(Team)
 
-
-# def update_scores(modeladmin, request, queryset):
-#     for user in queryset:
-#         print user, user.points
-#         user.points = 0
-#         print user, user.points
-#         guess_query = Guess.objects.filter(user=user)\
-#                             .exclude(match__time__gt=datetime.datetime.now())
-#         for guess in guess_query:
-#             print "MATCH:" , guess.match
-#             if guess.match.score_difference != 0:
-#                 if guess.winning_team == guess.match.winning_team:
-#                     user.points += 3
-#                     if guess.score_difference == guess.match.score_difference:
-#                         user.points += 2
-#             else:
-#                 if guess.score_difference == guess.match.score_difference:
-#                     user.points += 5
-#
-#         print user, user.points
-#         user.save()
-
 def update_scores(modeladmin, request, queryset):
     """
     Independent of parameters

@@ -87,16 +87,24 @@
     text-align: center;
     }
 
-#id_match {
-    width: 210px;
+.match, .match select {
+    width: 185px;
     }
 
-#id_winning_team {
-    width: 110px;
+.winning_team, .winning_team select {
+    width: 100px;
     }
 
-#id_score_difference {
+.score_difference, .score_difference input {
     width: 42px;
+    }
+
+.save_button {
+    margin-top: 1vh;
+    width: 327px;
+    margin-left: -163.5px;
+    left: 50%;
+    position: relative;
     }
 
 .next_week_button {
@@ -105,7 +113,48 @@
     font-size: 1.2em;
     }
 
-/******************************************* RESULTS PAGE ***********************************************************/
+/**********************************************Guesses Media Queries *************************************************/
+
+@media (min-width: 510px) {
+
+.match, .match select {
+    width: 35vw;
+    min-width: 300px;
+    font-size: 1.2em;
+    height: 1.6em;
+    margin: 0.7em auto;
+    }
+
+.winning_team, .winning_team select {
+    width: 10vw;
+    min-width: 160px;
+    font-size: 1.2em;
+    height: 1.6em;
+    margin: 0.7em auto;
+    }
+
+.score_difference, .score_difference input {
+    width: 5vw;
+    min-width: 50px;
+    font-size: 1.2em;
+    height: 1.6em;
+    margin: 0.7em auto;
+    }
+
+.save_button {
+    margin-top: 1vh;
+    width: 25vw;
+    min-width: 327px;
+    margin-left: -12.5vw;
+    left: 50%;
+    position: relative;
+    font-size: 1.2em;
+    }
+
+}
+
+
+/************************************************** RESULTS PAGE *****************************************************/
 
 .results_tables {
     margin: 2vh auto;
