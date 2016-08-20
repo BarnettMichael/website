@@ -1,16 +1,14 @@
 {% extends "website/project_template.html" %}
 {% load staticfiles %}
 
-
-
 {% block head_title %}Fantasy Football Helper Project{% endblock %}
 
 {% block content_title %} Fantasy Football Helper {% endblock %}
 
 {% block project_description %}
 Fantasy Football Helper helps you pick your NFL fantasy football team by providing recommended players based on their
-previous points totals, what positions you currently need to fill or whether you already have a full compliment of starters.
-Recommends those players who are still available with the best historic performance and also those who have the best value
+past performances, what positions you currently need to fill or whether you already have a full compliment of starters.
+The script recommends those players who are still available with the best historic performance and also those who have the best value
 in comparison to the mean of players in their position.
 
 This project includes a web scraper written using the scrapy library, The data collected is stored in a postgres Database
@@ -23,13 +21,23 @@ information to the user via the GUI
 
 {% block project_skills %}
 <ul>
-    <li>Python 2.7</li>
-    <li>Scrapy + Xpath selectors</li>
-    <li>SQL Alchemy</li>
-    <li>PostGres Database</li>
-    <li>psycopg2 Database connection and manipulation through SQL queries</li>
-    <li>TKinter GUI</li>
+    <li>Python 2.7 - The webscraper, GUI and logic of the app is all written in python.</li>
+    <li>Scrapy + Xpath selectors - A python package that provides webscraping
+        tools, used to write the spider that collected the data.
+    </li>
+    <li>SQL Alchemy - Used as part of the pipeline to input data into the database, used to receive data
+        from scrapy and input it into a database by creating and sending the raw SQL for inputting user defined objects.
+    </li>
+    <li>PostGres Database - Used to store the data in a relational database.
+    </li>
+    <li>psycopg2 - Used to connect to a database and send a cursor with user written raw SQL code to be executed.
+    </li>
+    <li>TKinter GUI - GUI package that is part of the base python library.</li>
 </ul>
+{% endblock %}
+
+{% block project_video %}
+<iframe id="project_video" src="https://www.youtube.com/embed/LD72Em-67Cg" frameborder="0" allowfullscreen></iframe>
 {% endblock %}
 
 {% block project_media %}
@@ -62,6 +70,8 @@ information to the user via the GUI
 {% block github_link %}
 <a href="https://github.com/BarnettMichael/FantasyFootballHelper">See source code on GitHub</a>
 {% endblock %}
+
+
 
 {% block link_to_webapp %}
 {% endblock %}
