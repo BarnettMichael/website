@@ -51,8 +51,12 @@
 .project_media {
     background-color: rgba(0, 0, 255, 0.2);
     margin-bottom: 4vh;
-    /*height: 66vh;*/
     }
+
+.carousel-inner .item img {
+    height: 65vh;
+    object-fit: contain;
+}
 
 .github_link {
     font-size: 2em;
