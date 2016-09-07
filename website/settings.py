@@ -44,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rwc',
     'website',
+    'calorie_calculator',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,7 +64,7 @@ ROOT_URLCONF = 'website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'calorie_calculator')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,6 +90,10 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

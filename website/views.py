@@ -28,3 +28,7 @@ def project_ffhelper(request):
 
 def project_lootfilter(request):
     return render(request, "website/project_lootfilter.html", {})
+
+
+def calorie_calculator(request):
+    return render(request, "website/calorie_calculator_app.html", {})

@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^projects/score_predictor/?$', views.project_score_predictor, name='project_score_predictor'),
     url(r'^projects/ffhelper/?$', views.project_ffhelper, name='project_ffhelper'),
     url(r'^projects/lootfilter/?$', views.project_lootfilter, name='project_lootfilter'),
+    url(r'^calorie_calculator', views.calorie_calculator, name='calorie_calculator'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('calorie_calculator.urls')),
 ]
