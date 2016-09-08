@@ -8,28 +8,31 @@
 {% block content_title %} Score Predictor {% endblock %}
 
 {% block project_description %}
-The Score Predictor Challenge, allows you and a group of other users to guess the winning team and by what margin of victory
-for any match you store in the database. It can then compute each users scores and provide a ranking as well as a detailed
-history of who guessed what.
-
-Built using Django
+The Score Predictor Challenge is a website that allows you to compete against other users
+to try and guess the results of sports matches. The website allows you to guess who will win upcoming sports matches
+and by what margin. User guesses are tracked and points are assigned based on whether or not the correct team was
+selected, with bonus points awarded to the user(s) who is closest to the actual winning margin.
+The homepage displays the current standings of users, a list of upcoming matches and links to make/edit
+user guesses for upcoming matches and a view of all previous results and the guesses each user made associated with them.
+</br></br>
+The website is made using Django, with data being stored in a MySql database.
 {% endblock %}
 
 {% block project_skills %}
 <ul>
-    <li>Python 2.7</li>
+    <li>Python 2.7 - All logic for the website is written in python.</li>
     <li>Django
         <ul>
-            <li>Models</li>
-            <li>Templates</li>
-            <li>Views</li>
-            <li>Admin Methods</li>
-            <li>URL matching regular expression patterns</li>
+            <li>Models - used to represent, Team, User, and Guess objects.</li>
+            <li>Templates - HTML files with Django tags embedded in them to allow use of data passed in by the view.</li>
+            <li>Views - used to query the database, and render the templates while passing the appropriate collections for use in the template.</li>
+            <li>Admin Methods - used to update user scores, and create guesses for input match objects.</li>
+            <li>URL matching regular expression patterns - used to associate a particular url or pattern of urls with a view.</li>
         </ul>
     </li>
-    <li>HTML 5</li>
-    <li>CSS</li>
-    <li>Javascript/Jquery</li>
+    <li>HTML 5 - Used to write the Templates in a responsive design.</li>
+    <li>CSS - Custom CSS written to style elements in the templates to improve usability.</li>
+    <li>Javascript/Jquery - Used to create an interactive dropdown menu.</li>
 </ul>
 {% endblock %}
 
@@ -88,7 +91,7 @@ Built using Django
 {% endblock %}
 
 {% block github_link %}
-<a href="https://github.com/BarnettMichael/website">See source code on GitHub</a>
+<a href="https://github.com/BarnettMichael/website/tree/master/rwc">See source code on GitHub</a>
 {% endblock %}
 
 {% block link_to_webapp %}
