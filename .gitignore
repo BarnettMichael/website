@@ -4,5 +4,8 @@ myvenv
 db.sqlite3
 .DS_Store
 security.py
-
-**/static/calorie-calculator
+**/static/calorie-calculator/
+**/static/calorie-calculator/node_modules
+*.ts
+*.js.map
+*.sublime*

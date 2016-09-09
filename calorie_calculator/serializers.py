@@ -1,13 +1,26 @@
-from models import Ingredient, Recipe
-from rest_framework import  serializers
+from models import Ingredient, Tag, Recipe, Instruction
+from rest_framework import serializers
+
 
 class IngredientSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ingredient
-        fields = ('id', 'name', 'carbs', 'sugar', 'protein', 'fat')
+        fields = ('name', 'carbs', 'sugar', 'protein', 'fat')
+
+
+class TagSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Tag
+        fields = 'tag'
 
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('id', 'name', 'ingredients', 'macros', 'calories', 'instructions', 'tags')
+        fields = ('name', 'ingredients', 'macros', 'calories', 'tags', 'ingredients_dictionary')
+
+
+class InstructionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Instruction
+        fields = ('recipe', 'instruction')

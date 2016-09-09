@@ -1,27 +1,41 @@
 from django.db import models
-import uuid
+from jsonfield import JSONField
 
-# Create your models here.
+
 class Ingredient(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
-    carbs = models.IntegerField()
-    sugar = models.IntegerField()
-    protein = models.IntegerField()
-    fat = models.IntegerField()
+    carbs = models.FloatField()
+    sugar = models.FloatField()
+    protein = models.FloatField()
+    fat = models.FloatField()
 
     def __str__(self):
         return self.name
+
+
+class Tag(models.Model):
+    tag = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.tag
 
 
 class Recipe(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     name = models.CharField(max_length=200)
-    ingredients = {}
-    macros = {}
-    calories = models.PositiveIntegerField()
-    instructions = []
-    tags = []
+    ingredients = models.ManyToManyField(Ingredient)
+    ingredients_dictionary = JSONField(null=True, blank=True)
+    macros = models.CommaSeparatedIntegerField(max_length=10, blank=True)
+    calories = models.PositiveIntegerField(default=0)
+    tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self):
         return self.name
+
+
+class Instruction(models.Model):
+    recipe = models.ForeignKey(Recipe)
+    instruction = models.CharField(max_length=300)
+
+    def __str__(self):
+        return str(self.recipe) + ": " + str(self.instruction)
