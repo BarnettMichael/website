@@ -65,36 +65,60 @@ a:hover {
 
 .header {
     margin-top: -3vh;
-    height: 128vh;
+    height: 103vh;
     background-size: cover;
     }
 
-.header--bgtint {
+.header--data {
     width: 100%;
     height: 100%;
     background-color: rgba(25,25,25,0.55);
-    }
-
-.header--data {
     max-width: 1400px;
     color: rgb(255,255,255);
     }
 
-/*.header--data .logo img{
-    width: 300px;
-    height: 300px;
-    background-color: #FFF;
-    margin-top: 33vh;
-    margin-left: 20vw;
-    }*/
+.header__intro {
+    height: 20vh;
+    text-align: center;
+    margin: 43vh auto;
+    }
+
+.intro__detail {
+    position: relative;
+    top: 17%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-size: 2.3em
+}
 
 .header__options {
-    float: right;
     padding-right: 5vw;
     height: 100%;
-    padding-top: 15vh;
-    font-size: 12vh;
+    margin: 38vh auto;
+    font-size: 3.5vh;
     text-align: right;
+}
+
+@media all and (orientation: portrait) {
+
+.header {
+    height: 53vh;
+    }
+
+.header__intro {
+    margin: 18vh auto;
+    }
+
+.intro__detail {
+    top: 35%;
+    left: 0%;
+    font-size: 1.5em;
+    }
+
+.header__options {
+    visibility: hidden;
+    }
+
 }
 
 .header__options a {
@@ -129,6 +153,7 @@ body {
     background-color: rgba(25,25,25,0.5);
     color: rgb(255,255,255);
     font-size: 3.3vh;
+    padding-top: 20vh;
     }
 
 .navbar:hover {
@@ -261,20 +286,25 @@ body {
 }
 
 .content {
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: auto;
     position: relative;
     line-height: 2em;
     }
 
 .spacer {
-    height: 100px;
-    background-color: black;
+    height: 150px;
+    background-color: rgb(153, 23, 60);
+    margin: 75px 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
     }
 
 .portfolio_section {
     color: rgb(46,38,51);
-    /*font-size: 1.3em;*/
+    max-width: 1200px;
+    margin: 75px auto;
     }
 
 .portfolio_section--title {
@@ -313,9 +343,7 @@ body {
     visibility: hidden;
     width: 100%;
     height: 100%;
-    background-color: rgb(255,150,0);
-    border-radius: 50%;
-    margin: auto;
+    background-color: rgba(85,81,82,0.6);
     }
 
 .project_title {
