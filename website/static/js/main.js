@@ -50,6 +50,23 @@ $(document).ready(function() {
         }
     });
 
+    var index = 0;
+    var delay = 2250;
+    var fade = 400;
+    var index_max = $(".spacer--content li").length -1;
+
+	function cycleSpacer(){
+	        $(".spacer--content li:eq(" + index + ")")
+	            .animate({"opacity" : "1"}, fade)
+	            .animate({"opacity" : "1"}, delay)
+	            .animate({"opacity" : "0"}, fade, function(){
+	                (index == index_max) ? index=0 : index++;
+	                    cycleSpacer();
+	                });
+	         };
+
+	 cycleSpacer();
+
     $('.portfolio_project').hover(function() {
         $(this).find('.project_button').css('visibility', 'visible');
     }, function() {

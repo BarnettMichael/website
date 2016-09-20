@@ -59,6 +59,10 @@ textarea {
     font-family: 'Raleway', sans-serif;
     }
 
+.highlight {
+    color: rgb(153, 23, 60);
+    }
+
 a:hover {
     text-decoration: none;
     }
@@ -67,13 +71,14 @@ a:hover {
     margin-top: -3vh;
     height: 103vh;
     background-size: cover;
+    background-color: rgb(153, 23, 60);
     }
 
 .header--data {
     width: 100%;
     height: 100%;
-    background-color: rgba(25,25,25,0.55);
-    max-width: 1400px;
+    /*background-color: rgba(25,25,25,0.55);
+    max-width: 1400px;*/
     color: rgb(255,255,255);
     }
 
@@ -88,7 +93,7 @@ a:hover {
     top: 17%;
     left: 5%;
     transform: translateY(-50%);
-    font-size: 2.3em
+    /*font-size: 2.3em*/
 }
 
 .header__options {
@@ -110,13 +115,13 @@ a:hover {
     }
 
 .intro__detail {
-    top: 35%;
-    left: 0%;
-    font-size: 1.5em;
+    top: 37.5%;
+    left: 18.5%;
+    /*font-size: 1.5em;*/
     }
 
 .header__options {
-    visibility: hidden;
+    display: none;
     }
 
 }
@@ -299,6 +304,38 @@ body {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
+    position: relative;
+    }
+
+.spacer--content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow:hidden;
+    height: 150px;
+    color: rgb(255, 255, 255);
+    }
+
+.spacer--content li {
+    font-size:1.4em;
+    opacity:0;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -5vw;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    }
+
+.fa-ul {
+    margin: 0;
+    }
+
+.fa-li {
+    position: relative;
+    top: 0;
+    left: 0.5em;
     }
 
 .portfolio_section {
@@ -316,6 +353,9 @@ body {
     margin: 3vh auto;
     width: 30vw;
     min-width: 215px;
+    }
+
+.portfolio_section--content {
     }
 
 .about__data {
