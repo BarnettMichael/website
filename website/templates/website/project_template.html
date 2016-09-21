@@ -20,37 +20,53 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-7 text_column">
-            <section class="project_description">
-                <div class="section_title">Description</div>
-                <div class="project_description_text">
+            <section class="project_description portfolio_section">
+                <div class="portfolio_section--title">Description</div>
+                <div class="project_description_text portfolio_section--content">
                     {% block project_description %}
 
                     HERE YOU DESCRIBE WHAT THE PROJECT IS
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere.
+                    Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat.
+                    Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat,
+                    at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur.
+                    Quisque pellentesque, risus vel malesuada scelerisque,
+                    eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non,
+                    porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est,
+                    in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin.
+                    Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat.
 
                     {% endblock %}
                 </div>
 
             </section>
 
-            <section class="project_skills">
-                <div class="section_title">Skills Used</div>
-                <div class="project_skills_text">
+            <section class="project_skills portfolio_section">
+                <div class="portfolio_section--title">Skills Used</div>
+                <div class="project_skills_text portfolio_section--content">
                     {% block project_skills %}
 
                     PUT SKILL AND TECH USED IN THE PROJECT HERE
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere. Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat. Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat, at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur. Quisque pellentesque, risus vel malesuada scelerisque, eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non, porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est, in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin. Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu eros vitae est mollis posuere.
+                    Curabitur quis lorem arcu. Vestibulum tempus ante id turpis semper, nec congue leo feugiat.
+                    Cras fermentum, eros vel hendrerit dignissim, lacus lacus semper erat,
+                    at porta nibh sem sed quam. Mauris feugiat et ipsum non efficitur.
+                    Quisque pellentesque, risus vel malesuada scelerisque,
+                    eros orci laoreet ligula, id convallis leo nunc in justo. In dui sapien, laoreet eget facilisis non,
+                    porta ut velit. Morbi gravida, ex id maximus sodales, massa tellus porttitor est,
+                    in mattis augue diam at purus. Nulla vel arcu vitae lacus dictum sollicitudin.
+                    Vivamus vitae ultricies ante. Curabitur molestie sapien at justo fermentum placerat.
 
                     {% endblock %}
                 </div>
             </section>
         </div>
         <div class="col-lg-5 media_column">
-            <section class="project_video">
+            <section class="project_video portfolio_section">
                 {% block project_video %}
                 {% endblock %}
             </section>
-            <section class="project_media carousel slide" id="media_carousel" data-ride="carousel">
+            <section class="project_media carousel slide portfolio_section" id="media_carousel" data-ride="carousel">
                 {% block project_media %}
 
                 <ol class="carousel-indicators">
@@ -92,7 +108,7 @@
             </section>
             <section class="github_link">
                 {% block github_link %}
-                <a href="{% url 'home' %}">See source code on GitHub</a>
+                <a href="{% url 'home' %}">Put link to github code here</a>
                 {% endblock %}
             </section>
         </div>

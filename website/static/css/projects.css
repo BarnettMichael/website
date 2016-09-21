@@ -1,8 +1,7 @@
 .header {
     height: 35vh;
-    background-color: rgb(255, 150, 0);
-
-    }
+    background-color: rgb(153, 23, 60);
+}
 
 .project_title {
     text-align: center;
@@ -13,36 +12,38 @@
     padding-top: 0px;
     }
 
+/*
 .section_title {
     color: rgb(153,23,60);
     font-size: 2.5em;
     text-decoration: underline;
     margin-bottom: 1vh;
     }
+*/
 
 .text_column {
     padding-left: 3vw;
     padding-right: 2vw;
     }
 
-.project_description {
+/*.project_description {
     margin-top: 5vh;
     margin-bottom: 4vh;
-    }
+    }*/
 
-.project_description_text {
+/*.project_description_text {
     text-indent: 2vw;
     font-size: 1.5em;
-    }
+    }*/
 
-.project_skills {
+/*.project_skills {
     margin-bottom: 4vh;
-    }
+    }*/
 
-.project_skills_text {
+/*.project_skills_text {
     text-indent: 2vw;
     font-size: 1.5em;
-    }
+    }*/
 
 .media_column {
     margin-top: 10vh;

@@ -65,36 +65,46 @@
     <section class="portfolio_section" id="about">
         <div class="portfolio_section--content">
             <p class="about__data">
-                Hi my name is Mike and I am a primarily self-taught backend coder, I like to solve puzzles and build things.
-                I have worked mostly with <strong>Python</strong>, learning programming techniques such as OOP as I go.
-                I have also built a website using the <span class="highlight">Django</span> framework that allowed me to learn some <strong>HTML</strong> and <strong>CSS</strong> as well
-                as practice my Javascript and jQuery. I hope you enjoy my portfolio and please feel free to contact me with any questions.
+                Hi my name is Mike and I am a self-taught <strong>Python developer</strong> specialising in backend
+                development. I am very <span class="highlight">analytical</span> with strong problem solving abilities
+                developed over the course of a philosophy degree and a strong mathematical background.
+                Philosophy allowed me to develop my ability to <span class="highlight">communicate and explain</span>
+                complex abstract ideas to both people familiar with the material and non technical people.
+                Working as part of a team to <span class="highlight">build solutions</span> to problems is something
+                that I have always enjoyed. Over my development career I have built a website using
+                <strong>Django</strong> that allows users to guess which team is going to win a sports match;
+                a GUI based application that recommends players for the users fantasy American football
+                team over the course of a draft
+                and a web scraper to collect data for the database used by the application.
             </p>
         </div>
     </section>
     <section class="portfolio_section" id="education">
         <h1 class="portfolio_section--title">Education</h1>
         <div class="portfolio_section--content">
-            <ul>
-                <li>
-                    <strong>Just IT Development Professional Programme</strong></br>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa-fw fa fa-code"></i>
+                    <span class="highlight">Just IT Development Professional Programme</span></br>
                     <a href="https://app.pluralsight.com/id/profile/barnettmichael" id="pluralsight_link">
                         Pluralsight profile
                     </a>
                 </li>
-                <li>
-                    <strong>BA Philosophy 2:1(hons)</strong>: Birkbeck College, University of London</br>
-                    Strong logical background, abitlity to express knowledge in a precise way.
-                    able to read and critique complex arguments. Think creatively to abstract problems, and provide clear
-                    and concise arguments to persuade others.
+                <li><i class="fa-li fa-fw fa fa-book"></i>
+                    <span class="highlight">BA Philosophy 2:1(hons):</span>
+                    <strong>Birkbeck College, University of London</strong></br>
+                    Strong logical background, ability to express knowledge in a precise way. Able to read and critique
+                    complex arguments. Think creatively to solve abstract problems, and provide clear and concise
+                    arguments to persuade others.
                 </li>
-                <li>
-                    <strong>Mathematics and Astrophysics</strong>: University College London</br>
+                <li><i class="fa-li fa-fw fa fa-bar-chart"></i>
+                    <span class="highlight">Mathematics and Astrophysics:</span>
+                    <strong>University College London</strong></br>
                     Focused mainly of mathematical methods, developing strong problem solving capabilities, ability to take
                     known solutions to analytical problems and reapply them to similar more complex problems.
                 </li>
-                <li>
-                    <strong>A-Levels</strong>: 360 UCAS Points</br>
+                <li><i class="fa-li fa-fw fa fa-graduation-cap"></i>
+                    <span class="highlight">A-Levels:</span>
+                    <strong>360 UCAS Points</strong></br>
                     Further Mathematics A</br>
                     Mathematics A</br>
                     Physics A</br>
@@ -104,23 +114,23 @@
     </section>
     <div class="spacer" id="about_spacer">
         <ul class="fa-ul spacer--content">
-            <li><i class="fa fa-li fa-bar-chart"></i> Analytical</li>
-            <li><i class="fa fa-li fa-puzzle-piece"></i> Abstract Problem Solving</li>
-            <li><i class="fa fa-li fa-question"></i>Inquisitive</li>
-            <li><i class="fa fa-li fa-calendar"></i>Collaborative</li>
-            <li><i class="fa fa-li fa-comments"></i>Good Communication</li>
+            <li><i class="fa fa-li fa-fw fa-bar-chart"></i> Analytical</li>
+            <li><i class="fa fa-li fa-fw fa-puzzle-piece"></i> Abstract Problem Solving</li>
+            <li><i class="fa fa-li fa-fw fa-question"></i>Inquisitive</li>
+            <li><i class="fa fa-li fa-fw fa-calendar"></i>Collaborative</li>
+            <li><i class="fa fa-li fa-fw fa-comments"></i>Communication</li>
         </ul>
     </div>
     <section class="portfolio_section container-fluid" id="portfolio">
         <h1 class="portfolio_section--title">Portfolio</h1>
         <div class="portfolio_section--content row">
-            <div class="portfolio_project col-md-3" id="score_prediction_challenge">
+            <div class="portfolio_project col-sm-3" id="score_prediction_challenge">
                 <a href="{% url 'project_score_predictor' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/score_predictor_splash.png' %})">
                         <div class="project_button">
                             <div class="project_title">
-                                <i class="fa fa-plus-square"></i>Details
+                                <i class="fa fa-plus fa-2x"></i></br></br>Details
                             </div>
                         </div>
                     </div>
@@ -129,12 +139,14 @@
                     <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
                 </a>
             </div>
-            <div class="portfolio_project col-md-3" id="ffhelper">
+            <div class="portfolio_project col-sm-3" id="ffhelper">
                 <a href="{% url 'project_ffhelper' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/FFHelperRunning.png' %})">
                         <div class="project_button">
-                            <div class="project_title"><h2>FFHelper</h2></div>
+                            <div class="project_title">
+                                <i class="fa fa-plus fa-2x"></i></br></br>Details
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -142,12 +154,14 @@
                     <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
                 </a>
             </div>
-            <div class="portfolio_project col-md-3" id="loot_filter_generator">
+            <div class="portfolio_project col-sm-3" id="loot_filter_generator">
                 <a href="{% url 'project_lootfilter' %}">
                     <div class="project_background"
                          style="background-image: url({% static 'img/loot_filter_splash.png' %})">
                         <div class="project_button">
-                            <div class="project_title"><h2>PoE Loot Filter</h2></div>
+                            <div class="project_title">
+                                <i class="fa fa-plus fa-2x"></i></br></br>Details
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -159,32 +173,29 @@
     </section>
     <section class="portfolio_section container-fluid" id="skillset">
         <h1 class="portfolio_section--title">Skill Set</h1>
-        <div class="portfolio_section--content">
-            <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#python_string">
-                            <h2 class="panel-title">
-                                Python 2.7
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="python_string" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <ul class="fa-ul">
-                                <li><i class="fa-li fa fa-car"></i>
+        <div class="portfolio_section--content row">
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#python_modal">
+                <div class="modal_button">
+                    <h2 class="modal_title">Python 2.7</h2>
+                </div>
+            </a>
+            <div id="python_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">Python 2.7</h2>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                <li>
                                     <b>Projects:</b>
-                                    <ul class="fa-ul">
-                                        <li><i class="fa-li fa fa-home fa-pulse"></i>
+                                    <ul>
+                                        <li>
                                             FFhelper: Use Scrapy, SQLAlchemy and postgres to collect data into a database.</br>
                                             Use data in database displayed on a tkinter GUI within the application.<br>
                                         </li>
-                                        <li><i class="fa-li fa fa-home fa-spin"></i>
+                                        <li>
                                             POE Loot Filter Generator: Outputs a string depending on the data stored in dictionaries within the file.
                                         </li>
                                     </ul>
@@ -201,23 +212,25 @@
                                 <li><b>Learn Python the Hard Way ebook</b></li>
                             </ul>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#django_string">
-                            <h2 class="panel-title">
-                                Django
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="django_string" class="panel-collapse collapse">
-                        <div class="panel-body">
+            </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#django_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">Django</h2>
+                </div>
+            </a>
+            <div id="django_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">Django</h2>
+                        </div>
+                        <div class="modal-body">
                             <ul>
                                 <li><b>Score Predictor Website</b>
                                     <ul>
@@ -231,23 +244,25 @@
                                 <li><b>Djangogirls tutorial</b></li>
                             </ul>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#html_string">
-                            <h2 class="panel-title">
-                                HTML CSS
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="html_string" class="panel-collapse collapse">
-                        <div class="panel-body">
+            </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#html_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">HTML/CSS</h2>
+                </div>
+            </a>
+            <div id="html_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">HTML/CSS</h2>
+                        </div>
+                        <div class="modal-body">
                             <ul>
                                 <li><b>Integrated HTML with django tags and blocks to provide data-driven views</b></li>
                                 <li><b>Bootstrap integration in website design</b></li>
@@ -256,71 +271,79 @@
                                 <li><b>Designed and built this website to be responsive through use of media queries</b></li>
                             </ul>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#javascript_string">
-                            <h2 class="panel-title">
-                                Javascript
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="javascript_string" class="panel-collapse collapse">
-                        <div class="panel-body">
+            </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#javascript_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">Javascript</h2>
+                </div>
+            </a>
+            <div id="javascript_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">Javascript</h2>
+                        </div>
+                        <div class="modal-body">
                             <ul>
                                 <li><b>Wrote Javascript and jQuery scripts to produce animations on website</b></li>
                                 <li><b>Codeacademy.com course on Javascript and jQuery</b></li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#csharp_string">
-                            <h2 class="panel-title">
-                                C#
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="csharp_string" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <ul>
-                                <li><b>Two week bootcamp: covered syntax, OOP, LINQ, File IO</b></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#sql_string">
-                            <h2 class="panel-title">
-                                SQL and Postgres
-                            </h2>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                     aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="sql_string" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <b>Used to scrape data into a database and then fetch the data in FFHelper project</b>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#csharp_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">C#</h2>
+                </div>
+            </a>
+            <div id="csharp_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">C#</h2>
+                        </div>
+                        <div class="modal-body">
+                            <b>Two week bootcamp: covered syntax, OOP, LINQ, File IO</b>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#sql_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">SQL and Postgres</h2>
+                </div>
+            </a>
+            <div id="sql_modal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">SQL and Postgres</h2>
+                            </div>
+                            <div class="modal-body">
+                                <b>Used to scrape data into a database and then fetch the data in FFHelper project</b>
+                            </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
 </div>
