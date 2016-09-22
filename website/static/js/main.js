@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     $('.navbar').click(function() {
         if ($(this).hasClass('expanded')){
-            $(this).animate({height: '10vh'});
+            $(this).animate({height: '85px'});
             }
         else {
             $(this).animate({height: '115vh'});
@@ -71,5 +71,11 @@ $(document).ready(function() {
         $(this).find('.project_button').css('visibility', 'visible');
     }, function() {
         $(this).find('.project_button').css('visibility', 'hidden');
+    });
+
+    $('.modal_button').hover(function() {
+        $(this).find('.modal_title').css('color', 'rgb(51, 122, 183)')
+    }, function() {
+        $(this).find('.modal_title').css('color', 'rgb(255, 255, 255)')
     });
 });

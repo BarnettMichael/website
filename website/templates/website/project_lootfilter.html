@@ -15,9 +15,9 @@ The script uses a series of functions each of which use the stored data and prin
 {% endblock %}
 
 {% block project_skills %}
-<ul>
-    <li>Python 2.7</li>
-</ul>
+<div class="project_skill">
+    <span class="highlight">Python 2.7</span> - Simple python script that prints a string.
+    </div>
 {% endblock %}
 
 {% block project_media %}
@@ -43,7 +43,9 @@ The script uses a series of functions each of which use the stored data and prin
 {% endblock %}
 
 {% block github_link %}
-<a href="https://github.com/BarnettMichael/PoELootFilterGenerator">See source code on GitHub</a>
+<a href="https://github.com/BarnettMichael/PoELootFilterGenerator">
+    <img src="{% static 'img/githublogo.png' %}"/>Github
+</a>
 {% endblock %}
 
 {% block link_to_webapp %}

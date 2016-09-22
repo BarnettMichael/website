@@ -1,15 +1,13 @@
 .header {
-    height: 35vh;
+    height: 50vh;
     background-color: rgb(153, 23, 60);
 }
 
 .project_title {
     text-align: center;
-    position: relative;
-    top: 15vh;
     text-decoration: none;
+    background-color: rgba(46,38,51,0.5);
     font-size: 5.8vw;
-    padding-top: 0px;
     }
 
 /*
@@ -26,27 +24,13 @@
     padding-right: 2vw;
     }
 
-/*.project_description {
-    margin-top: 5vh;
-    margin-bottom: 4vh;
-    }*/
-
-/*.project_description_text {
-    text-indent: 2vw;
-    font-size: 1.5em;
-    }*/
-
-/*.project_skills {
-    margin-bottom: 4vh;
-    }*/
-
-/*.project_skills_text {
-    text-indent: 2vw;
-    font-size: 1.5em;
-    }*/
+.project_skill {
+    border: 1px solid rgb(46,38,51);
+    border-radius: 5px;
+    margin: 5px auto;
+    }
 
 .media_column {
-    margin-top: 10vh;
     }
 
 .project_media {
@@ -64,21 +48,23 @@
     text-align: right;
     }
 
-.webapp_link {
+.webapp_section {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
+    background-color: rgb(153,23,60);
     }
 
-.webapp_link a {
-    color: rgb(153,23,60);
-    }
-
-.webapp_link a:hover {
+.webapp_section:hover {
+    background-color: rgb(46,38,51);
     color: rgb(51, 122, 183);
     }
 
-/****************************************Media-Carousel*****************************************************/
+.webapp_section {
+    color: rgb(255, 255,255);
+    }
+
+/************************************    Media-Carousel    *************************************************/
 
 #project_video {
     width: 100%;
@@ -93,4 +79,18 @@
     }
 
 
-/***********************************************************************************************************/
+/***************************************    Media-Queries    ****************************************************/
+
+@media all and (min-width: 850px) {
+    .project_title {
+        font-size: 56px;
+        }
+}
+
+@media all and (max-width: 545px){
+    .project_video, .project_media {
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+
+}

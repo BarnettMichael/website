@@ -5,7 +5,7 @@
 
 {% block head_title %}Score Predictor Project{% endblock %}
 
-{% block content_title %} Score Predictor {% endblock %}
+{% block content_title %} Score Predictor Challenge{% endblock %}
 
 {% block project_description %}
 The Score Predictor Challenge is a website that allows you to compete against other users
@@ -19,9 +19,9 @@ The website is made using Django, with data being stored in a MySql database.
 {% endblock %}
 
 {% block project_skills %}
-<ul>
-    <li>Python 2.7 - All logic for the website is written in python.</li>
-    <li>Django
+
+    <div class="project_skill">
+        <span class="highlight">Django</span> -
         <ul>
             <li>Models - used to represent, Team, User, and Guess objects.</li>
             <li>Templates - HTML files with Django tags embedded in them to allow use of data passed in by the view.</li>
@@ -29,11 +29,20 @@ The website is made using Django, with data being stored in a MySql database.
             <li>Admin Methods - used to update user scores, and create guesses for input match objects.</li>
             <li>URL matching regular expression patterns - used to associate a particular url or pattern of urls with a view.</li>
         </ul>
-    </li>
-    <li>HTML 5 - Used to write the Templates in a responsive design.</li>
-    <li>CSS - Custom CSS written to style elements in the templates to improve usability.</li>
-    <li>Javascript/Jquery - Used to create an interactive dropdown menu.</li>
-</ul>
+    </div>
+    <div class="project_skill">
+        <span class="highlight">Python 2.7</span> - All logic for the website is written in python.
+    </div>
+    <div class="project_skill">
+        <span class="highlight">HTML 5</span> - Used to write the Templates in a responsive design.
+    </div>
+    <div class="project_skill">
+        <span class="highlight">CSS</span> - Custom CSS written to style elements in the templates to improve usability.
+    </div>
+    <div class="project_skill">
+        <span class="highlight">Javascript/Jquery</span> - Used to create an interactive dropdown menu.
+    </div>
+
 {% endblock %}
 
 {% block project_media %}
@@ -91,9 +100,16 @@ The website is made using Django, with data being stored in a MySql database.
 {% endblock %}
 
 {% block github_link %}
-<a href="https://github.com/BarnettMichael/website/tree/master/rwc">See source code on GitHub</a>
+<a href="https://github.com/BarnettMichael/website/tree/master/rwc">
+    <img src="{% static 'img/githublogo.png' %}"/>Github
+</a>
 {% endblock %}
 
 {% block link_to_webapp %}
-<a href="{% url 'rwc_home' %}">Check it out in action</a>
+
+<a class="webapp_link" href="{% url 'rwc_home' %}">
+    <section class="webapp_section">
+        Check it out in action
+    </section>
+</a>
 {% endblock %}

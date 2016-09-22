@@ -20,20 +20,29 @@ information to the user via the GUI
 {% endblock %}
 
 {% block project_skills %}
-<ul>
-    <li>Python 2.7 - The webscraper, GUI and logic of the app is all written in python.</li>
-    <li>Scrapy + Xpath selectors - A python package that provides webscraping
+<div class="project_skill">
+    <span class="highlight">Python 2.7</span> - The webscraper, GUI and logic of the app is all written in python.
+    </div>
+
+    <div class="project_skill">
+        <span class="highlight">Scrapy + Xpath selectors</span> - A python package that provides webscraping
         tools, used to write the spider that collected the data.
-    </li>
-    <li>SQL Alchemy - Used as part of the pipeline to input data into the database, used to receive data
+    </div>
+
+    <div class="project_skill">
+        <span class="highlight">SQL Alchemy</span> - Used as part of the pipeline to input data into the database, used to receive data
         from scrapy and input it into a database by creating and sending the raw SQL for inputting user defined objects.
-    </li>
-    <li>PostGres Database - Used to store the data in a relational database.
-    </li>
-    <li>psycopg2 - Used to connect to a database and send a cursor with user written raw SQL code to be executed.
-    </li>
-    <li>TKinter GUI - GUI package that is part of the base python library.</li>
-</ul>
+    </div>
+    <div class="project_skill">
+        <span class="highlight">PostGres Database</span> - Used to store the data in a relational database.
+    </div>
+    <div class="project_skill">
+        <span class="highlight">psycopg2</span> - Used to connect to a database and send a cursor with user written raw SQL code to be executed.
+    </div>
+    <div class="project_skill">
+        <span class="highlight">TKinter GUI</span> - GUI package that is part of the base python library.
+    </div>
+
 {% endblock %}
 
 {% block project_video %}
@@ -68,7 +77,9 @@ information to the user via the GUI
 {% endblock %}
 
 {% block github_link %}
-<a href="https://github.com/BarnettMichael/FantasyFootballHelper">See source code on GitHub</a>
+<a href="https://github.com/BarnettMichael/FantasyFootballHelper">
+    <img src="{% static 'img/githublogo.png' %}"/>Github
+</a>
 {% endblock %}
 
 

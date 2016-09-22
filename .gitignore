@@ -9,3 +9,7 @@ security.py
 *.ts
 *.js.map
 *.sublime*
+
+/website/static/img/coffee-small2.png
+/website/static/img/coffee-small3.png
+/website/static/img/coffee-small.png

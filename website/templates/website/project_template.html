@@ -12,8 +12,8 @@
 
 {% block content %}
 
-<header class="header">
-    <div class="project_title">
+<header class="header" style="background-image: url({% static 'img/coffee-justin-leibow.png' %})">
+    <div class="project_title vertical_centre">
         {% block content_title %} NAME OF PROJECT {% endblock %}
     </div>
 </header>
@@ -59,6 +59,11 @@
 
                     {% endblock %}
                 </div>
+                {% block github_link %}
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/githublogo.png' %}"/>Github
+                </a>
+                {% endblock %}
             </section>
         </div>
         <div class="col-lg-5 media_column">
@@ -106,19 +111,16 @@
                 </a>
 
             </section>
-            <section class="github_link">
-                {% block github_link %}
-                <a href="{% url 'home' %}">Put link to github code here</a>
-                {% endblock %}
-            </section>
         </div>
     </div>
 
+
+    {% block link_to_webapp %}
     <section class="webapp_link">
-        {% block link_to_webapp %}
-        PUT LINK TO WORKING WEBAPP PROJECT IF POSSIBLE
-        {% endblock %}
+         PUT LINK TO WORKING WEBAPP PROJECT IF POSSIBLE
     </section>
+    {% endblock %}
+
 </div>
 
 {% endblock %}

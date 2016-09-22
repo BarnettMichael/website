@@ -31,8 +31,7 @@
 {% endblock %}
 
 {% block content %}
-<!--<header class="header" style="background-image: url({% static 'img/woodchip-paul-green.jpg' %})">-->
-<header class="header">
+<header class="header" style="background-image: url({% static 'img/coffee-small4.png' %})">
     <div class="header--data container-fluid">
         <div class="row">
             <div class="header__intro col-xs-9">
@@ -65,7 +64,7 @@
     <section class="portfolio_section" id="about">
         <div class="portfolio_section--content">
             <p class="about__data">
-                Hi my name is Mike and I am a self-taught <strong>Python developer</strong> specialising in backend
+                Hi my name is <strong>Mike</strong> and I am a self-taught <strong>Python developer</strong> specialising in backend
                 development. I am very <span class="highlight">analytical</span> with strong problem solving abilities
                 developed over the course of a philosophy degree and a strong mathematical background.
                 Philosophy allowed me to develop my ability to <span class="highlight">communicate and explain</span>
@@ -82,9 +81,11 @@
     <section class="portfolio_section" id="education">
         <h1 class="portfolio_section--title">Education</h1>
         <div class="portfolio_section--content">
-            <ul class="fa-ul">
+            <ul class="fa-ul education_list">
                 <li><i class="fa-li fa-fw fa fa-code"></i>
                     <span class="highlight">Just IT Development Professional Programme</span></br>
+                    Invested in a self-funded course, to improve my development abilities and get myself to the point
+                    where I can meaningfully contribute to a development team.
                     <a href="https://app.pluralsight.com/id/profile/barnettmichael" id="pluralsight_link">
                         Pluralsight profile
                     </a>
@@ -187,30 +188,26 @@
                             <h2 class="modal-title">Python 2.7</h2>
                         </div>
                         <div class="modal-body">
+                            <b>Projects:</b>
                             <ul>
                                 <li>
-                                    <b>Projects:</b>
-                                    <ul>
-                                        <li>
-                                            FFhelper: Use Scrapy, SQLAlchemy and postgres to collect data into a database.</br>
-                                            Use data in database displayed on a tkinter GUI within the application.<br>
-                                        </li>
-                                        <li>
-                                            POE Loot Filter Generator: Outputs a string depending on the data stored in dictionaries within the file.
-                                        </li>
-                                    </ul>
+                                    FFhelper: Use Scrapy, SQLAlchemy and postgres to collect data into a database.</br>
+                                    Use data in database displayed on a tkinter GUI within the application.<br>
                                 </li>
                                 <li>
-                                    <b>newcoder.io tutorials:</b>
-                                    <ul>
-                                        <li>Data Visualisation: import a csv file, make a graph using matplotlib, output a GeoJSON file that can be mapped.</li>
-                                        <li>API: Interacting with a public API</li>
-                                        <li>Web Scraping: Use Scrapy, SQLAlchemy and Postgres to collect data and imput it into a database</li>
-                                        <li>GUI: Use tkinter to build an interactive display for a simple sudoku game</li>
-                                    </ul>
+                                    POE Loot Filter Generator: Outputs a string depending on the data stored in dictionaries within the file.
                                 </li>
-                                <li><b>Learn Python the Hard Way ebook</b></li>
                             </ul>
+
+                            <b>newcoder.io tutorials:</b>
+                            <ul>
+                                <li>Data Visualisation: import a csv file, make a graph using matplotlib, output a GeoJSON file that can be mapped.</li>
+                                <li>API: Interacting with a public API</li>
+                                <li>Web Scraping: Use Scrapy, SQLAlchemy and Postgres to collect data and imput it into a database</li>
+                                <li>GUI: Use tkinter to build an interactive display for a simple sudoku game</li>
+                            </ul>
+
+                            <b>Learn Python the Hard Way ebook</b>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -231,18 +228,15 @@
                             <h2 class="modal-title">Django</h2>
                         </div>
                         <div class="modal-body">
+                            <b>Score Predictor Website</b>
                             <ul>
-                                <li><b>Score Predictor Website</b>
-                                    <ul>
-                                        <li>Wrote models to represent user, match, guess</li>
-                                        <li>Wrote some admin methods</li>
-                                        <li>Queried a database</li>
-                                        <li>Uses Django built in user authentication</li>
-                                        <li>Wrote regex for url matching</li>
-                                    </ul>
-                                </li>
-                                <li><b>Djangogirls tutorial</b></li>
+                                <li>Wrote models to represent user, match, guess</li>
+                                <li>Wrote some admin methods</li>
+                                <li>Queried a database</li>
+                                <li>Uses Django built in user authentication</li>
+                                <li>Wrote regex for url matching</li>
                             </ul>
+                            <b>Djangogirls tutorial</b>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -301,6 +295,31 @@
                     </div>
                 </div>
             </div>
+            <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#angular_modal">
+                <div class="modal_button">
+                     <h2 class="modal_title">Angular2</h2>
+                </div>
+            </a>
+            <div id="angular_modal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Angular2</h2>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li><b>Completed Angular2 Tour of Heroes tutorial</b></li>
+                                    <li><b>Completed Angular2: Getting Started course on pluralsight</b></li>
+                                    <li><b>Currently building a single page app that connects to a RESTful API</b></li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <a class="modal_link col-xs-6 col-sm-4" data-toggle="modal" data-target="#csharp_modal">
                 <div class="modal_button">
                      <h2 class="modal_title">C#</h2>
