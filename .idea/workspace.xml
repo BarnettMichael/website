@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d25ec037-5937-4a42-8b93-cf0327de9721" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rwc/templates/rwc/rwc_home.html" afterPath="$PROJECT_DIR$/rwc/templates/rwc/rwc_home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/static/css/main.css" afterPath="$PROJECT_DIR$/website/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/static/css/projects.css" afterPath="$PROJECT_DIR$/website/static/css/projects.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/static/js/main.js" afterPath="$PROJECT_DIR$/website/static/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/base.html" afterPath="$PROJECT_DIR$/website/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/website/index.html" afterPath="$PROJECT_DIR$/website/templates/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/website/project_ffhelper.html" afterPath="$PROJECT_DIR$/website/templates/website/project_ffhelper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/website/project_lootfilter.html" afterPath="$PROJECT_DIR$/website/templates/website/project_lootfilter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/website/project_score_predictor.html" afterPath="$PROJECT_DIR$/website/templates/website/project_score_predictor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/templates/website/project_template.html" afterPath="$PROJECT_DIR$/website/templates/website/project_template.html" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/templates/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="115">
+              <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
               <folding>
                 <element signature="n#a#1;n#div#1;n#nav#0;n#!!top" expanded="false" />
                 <element signature="n#a#3;n#div#1;n#nav#0;n#!!top" expanded="false" />
@@ -61,7 +51,6 @@
                 <element signature="n#a#3;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
                 <element signature="n#a#4;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
                 <element signature="n#section#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#section#1;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#a#0;n#li#0;n#ul#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#section#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#a#1;n#div#0;n#div#0;n#section#2;n#div#0;n#!!top" expanded="false" />
@@ -101,20 +90,20 @@
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#5;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#a#6;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#6;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
-                <marker date="1474553058455" expanded="false" signature="969:2047" ph="..." />
-                <marker date="1474553058455" expanded="false" signature="2227:3446" ph="..." />
+                <marker date="1474554322407" expanded="false" signature="969:2047" ph="..." />
+                <marker date="1474554322407" expanded="false" signature="2227:3446" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="505" column="9" selection-start-line="505" selection-start-column="9" selection-end-line="505" selection-end-column="9" />
+            <state relative-caret-position="767">
+              <caret line="543" column="22" selection-start-line="543" selection-start-column="22" selection-end-line="543" selection-end-column="22" />
               <folding>
-                <element signature="e#0#9771#0" expanded="false" />
+                <element signature="e#0#10071#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -185,8 +174,8 @@
         <option value="$PROJECT_DIR$/website/templates/base.html" />
         <option value="$PROJECT_DIR$/website/static/js/main.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/website/templates/website/index.html" />
         <option value="$PROJECT_DIR$/rwc/templates/rwc/rwc_home.html" />
+        <option value="$PROJECT_DIR$/website/templates/website/index.html" />
         <option value="$PROJECT_DIR$/website/static/css/main.css" />
       </list>
     </option>
@@ -796,20 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="505" column="9" selection-start-line="505" selection-start-column="9" selection-end-line="505" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#9771#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/templates/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="115">
+          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
           <folding>
             <element signature="n#a#1;n#div#1;n#nav#0;n#!!top" expanded="false" />
             <element signature="n#a#3;n#div#1;n#nav#0;n#!!top" expanded="false" />
@@ -820,7 +799,6 @@
             <element signature="n#a#3;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
             <element signature="n#a#4;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
             <element signature="n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#section#1;n#div#0;n#!!top" expanded="false" />
             <element signature="n#a#0;n#li#0;n#ul#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
             <element signature="n#section#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#a#1;n#div#0;n#div#0;n#section#2;n#div#0;n#!!top" expanded="false" />
@@ -860,8 +838,18 @@
             <element signature="n#div#2;n#div#0;n#div#0;n#div#5;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
             <element signature="n#a#6;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#6;n#div#0;n#section#3;n#div#0;n#!!top" expanded="false" />
-            <marker date="1474553058455" expanded="false" signature="969:2047" ph="..." />
-            <marker date="1474553058455" expanded="false" signature="2227:3446" ph="..." />
+            <marker date="1474554322407" expanded="false" signature="969:2047" ph="..." />
+            <marker date="1474554322407" expanded="false" signature="2227:3446" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="543" column="22" selection-start-line="543" selection-start-column="22" selection-end-line="543" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10071#0" expanded="false" />
           </folding>
         </state>
       </provider>
