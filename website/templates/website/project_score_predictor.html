@@ -107,9 +107,10 @@ The website is made using Django, with data being stored in a MySql database.
 
 {% block link_to_webapp %}
 
-<a class="webapp_link" href="{% url 'rwc_home' %}">
-    <section class="webapp_section">
-        Check it out in action
-    </section>
-</a>
+<section class="webapp_section">
+    <a class="webapp_link" href="{% url 'rwc_home' %}">
+        <div class="webapp_button">See it in action</div>
+    </a>
+</section>
+
 {% endblock %}

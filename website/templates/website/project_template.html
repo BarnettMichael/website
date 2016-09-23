@@ -38,7 +38,11 @@
 
                     {% endblock %}
                 </div>
-
+                {% block link_to_webapp %}
+                    <section class="webapp_link">
+                        PUT LINK TO WORKING WEBAPP PROJECT IF POSSIBLE
+                    </section>
+                    {% endblock %}
             </section>
 
             <section class="project_skills portfolio_section">
@@ -113,14 +117,6 @@
             </section>
         </div>
     </div>
-
-
-    {% block link_to_webapp %}
-    <section class="webapp_link">
-         PUT LINK TO WORKING WEBAPP PROJECT IF POSSIBLE
-    </section>
-    {% endblock %}
-
 </div>
 
 {% endblock %}

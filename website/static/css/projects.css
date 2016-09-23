@@ -10,15 +10,6 @@
     font-size: 5.8vw;
     }
 
-/*
-.section_title {
-    color: rgb(153,23,60);
-    font-size: 2.5em;
-    text-decoration: underline;
-    margin-bottom: 1vh;
-    }
-*/
-
 .text_column {
     padding-left: 3vw;
     padding-right: 2vw;
@@ -28,6 +19,7 @@
     border: 1px solid rgb(46,38,51);
     border-radius: 5px;
     margin: 5px auto;
+    padding: 5px;
     }
 
 .media_column {
@@ -49,19 +41,24 @@
     }
 
 .webapp_section {
+    margin: 75px auto;
+    width: 215px;
+    }
+
+.webapp_button {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 2vh;
     background-color: rgb(153,23,60);
+    color: rgb(255, 255,255);
+    padding: 5px;
+    border-radius: 12px;
+    border: 5px solid rgb(46, 38, 51)
     }
 
-.webapp_section:hover {
+
+.webapp_button:hover {
     background-color: rgb(46,38,51);
     color: rgb(51, 122, 183);
-    }
-
-.webapp_section {
-    color: rgb(255, 255,255);
     }
 
 /************************************    Media-Carousel    *************************************************/
