@@ -16,6 +16,7 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     ingredients = IngredientSerializer(many=True)
+    tags = TagSerializer(many=True)
 
     class Meta:
         model = Recipe

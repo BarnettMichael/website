@@ -1,10 +1,8 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, filters
 
 from .models import Ingredient, Tag, Recipe, Instruction
 from .serializers import IngredientSerializer, TagSerializer, RecipeSerializer, InstructionSerializer
 from .permissions import IsUserAllowedToWrite
-
-# Create your views here.
 
 
 class IngredientViewSet(viewsets.ModelViewSet):
@@ -16,6 +14,10 @@ class IngredientViewSet(viewsets.ModelViewSet):
     serializer_class = IngredientSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsUserAllowedToWrite)
+
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('^name',)
+
 
 
 class TagViewSet(viewsets.ModelViewSet):
@@ -38,6 +40,9 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsUserAllowedToWrite)
+
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name', 'tags__tag')
 
 
 class InstructionViewSet(viewsets.ModelViewSet):
