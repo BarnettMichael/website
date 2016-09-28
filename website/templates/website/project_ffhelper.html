@@ -86,3 +86,31 @@ information to the user via the GUI
 
 {% block link_to_webapp %}
 {% endblock %}
+
+{% block further_work %}
+
+<div class="portfolio_section--title">Further Work</div>
+<div class="project_skill">
+    <span class="highlight">Improve Scalability</span> -
+    Redesign database access to make use of an ORM, instead of using temptables within the database. This will improve
+    scalability of the project as users will just connect to the database to collect current data and all data manipulation
+    is properly encapsulated in the client application.
+</div>
+<div class="project_skill">
+    <span class="highlight">Scale Rookie/Young Player Scores</span> - Instead of Rookies having no value due to no
+    previous appearances, use performance of other players playing the same position picked at similar points in the
+    draft to provide an estimate for their rookie performances.
+</div>
+<div class="project_skill">
+    <span class="highlight">Improve Score Weighting</span> - Track the current formula for weighting against observed
+    player performance and make changes to the model to increase the accuracy with which the application recommends
+    players
+</div>
+<div class="project_skill">
+    <span class="highlight">Bench Players</span> - Instead of no longer recommending players who play a position no
+    longer required to be able to field a legal team reduce their associated value so that they are less likely to be
+    recommended, this will allow the application to recommend players for the bench and extend its usefulness to later
+    rounds.
+</div>
+
+{% endblock %}

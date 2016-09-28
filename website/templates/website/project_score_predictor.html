@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 
-
 {% block head_title %}Score Predictor Project{% endblock %}
 
 {% block content_title %} Score Predictor Challenge{% endblock %}
@@ -112,5 +111,32 @@ The website is made using Django, with data being stored in a MySql database.
         <div class="webapp_button">See it in action</div>
     </a>
 </section>
+
+{% endblock %}
+
+{% block further_work %}
+
+<div class="portfolio_section--title">Further Work</div>
+<div class="project_skill">
+    <span class="highlight">Automate Admin</span> -
+    <ul>
+        <li>Subscribe to an API such that the website will automatically add upcoming matches in chosen events
+            to the database.</li>
+        <li>Write a method that is called once a day that updates the scores for matches that have finished and
+            recalculates user scores.</li>
+    </ul>
+</div>
+<div class="project_skill">
+    <span class="highlight">More Stat Tracking</span> - Increase the number of stats tracked on a per user basis
+    and add a page or set of pages to display the advanced stats to the user and allow them to compare with other
+    users.</br>
+    e.g. <ul>
+    <li>Percent of guesses where user chose the correct team; number of times a user has guessed
+        the score difference the closest to the result
+    </li>
+    <li>Different leaderboards for different competitions and records of number of competitions won/participated in.
+    </li>
+</ul>
+</div>
 
 {% endblock %}

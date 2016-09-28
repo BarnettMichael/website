@@ -70,7 +70,7 @@
         </div>
     </div>
 </header>
-<div class="content" data-spy="scroll" data-target=".content" data-offset="10">
+<div class="content">
     <section class="portfolio_section" id="about">
         <div class="portfolio_section--content">
             <div class="about__data">
@@ -85,16 +85,15 @@
                 <span class=highlight>problem solving</span> skills and the ability to
                     <span class="highlight">analyse</span> and break apart complex abstract problems building on skills
                     learned over the course of my study of mathematics.
-                In addition to improving my ability to <span class=highlight>communicate</span> abstract ideas to
-                explain myself to the team I am currently working on a problem with.
+                In addition to improving my ability to <span class=highlight>communicate</span>
+                    complex ideas to others.
                 </p>
 
-
                 <p class="about_data--dev">
-                Over my development career I have built a website using <strong>Django</strong> that allows users to
+                Over my development career I have built: a website using <strong>Django</strong> that allows users to
                 guess which team is going to win a sports match; a GUI based application using <strong>Tkinter</strong>
-                that recommends players for the users fantasy American football team over the course of a draft and
-                a <strong>web scraper</strong> to collect data for the database used by the application.
+                that recommends players for the users fantasy American football team and a
+                    <strong>web scraper</strong> to collect data for the database used by the application.
                     <a href="#portfolio">Project details</a>
                 </p>
 
@@ -174,9 +173,6 @@
                         </div>
                     </div>
                 </a>
-                <!--<a class="project github_button" href="https://github.com/BarnettMichael/website/tree/master/rwc">
-                    <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
-                </a>-->
             </div>
             <div class="portfolio_project col-sm-3" id="ffhelper">
                 <a href="{% url 'project_ffhelper' %}">
@@ -189,9 +185,6 @@
                         </div>
                     </div>
                 </a>
-                <!--<a class="project github_button" href="https://github.com/BarnettMichael/FantasyFootballHelper">
-                    <img class="github_logo" src="{% static 'img/githublogo.png' %}"/>
-                </a>-->
             </div>
             <div class="portfolio_project col-sm-3" id="loot_filter_generator">
                 <a href="{% url 'project_lootfilter' %}">
@@ -204,9 +197,7 @@
                         </div>
                     </div>
                 </a>
-                <!--<a class="project github_button" href="https://github.com/BarnettMichael/PoELootFilterGenerator">
-                    <img class="github_logo" src="{% static 'img/githublogo-light.png' %}"/>
-                </a>-->
+
             </div>
         </div>
     </section>
@@ -241,7 +232,7 @@
                             <ul>
                                 <li>Data Visualisation: import a csv file, make a graph using matplotlib, output a GeoJSON file that can be mapped.</li>
                                 <li>API: Interacting with a public API</li>
-                                <li>Web Scraping: Use Scrapy, SQLAlchemy and Postgres to collect data and imput it into a database</li>
+                                <li>Web Scraping: Use Scrapy, SQLAlchemy and Postgres to collect data and input it into a database</li>
                                 <li>GUI: Use tkinter to build an interactive display for a simple sudoku game</li>
                             </ul>
 
@@ -393,7 +384,6 @@
                             </div>
                             <div class="modal-body">
                                 <b>Used to scrape data into a database and then fetch the data in FFHelper project</b>
-                            </ul>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
