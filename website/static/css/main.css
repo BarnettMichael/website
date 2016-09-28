@@ -269,7 +269,7 @@ body {
     }
 
 .spacer {
-    height: 150px;
+    height: 250px;
     background-color: rgb(153, 23, 60);
     margin: 75px 0;
     text-align: center;
@@ -283,7 +283,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     overflow:hidden;
-    height: 150px;
+    height: 250px;
     color: rgb(255, 255, 255);
     }
 
@@ -332,6 +332,11 @@ body {
 .about__data {
     width: 90%;
     margin: auto;
+    }
+
+.about__data--education_title {
+    text-align: center;
+    margin: 35px auto 15px;
     }
 
 #pluralsight_link {
